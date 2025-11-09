@@ -2102,22 +2102,17 @@ const FamilyStatus = ({ lang }) => (
   />
 );
 function MapCard({ lang }) {
-  const addrEN = BRAND.addressEN; // your displayed address
-  const addrAR = BRAND.addressAR;
+  const addrEN =
+    "Airport Road, Hamid Al Qubaisi Bldg, Mezzanine Floor, Office 3, Abu Dhabi, UAE";
+  const addrAR =
+    "شارع المطار، بناية حميد القبيسي، طابق الميزانين، مكتب (3)، أبوظبي، الإمارات العربية المتحدة";
   const isAR = lang === "ar";
 
-  // === Map target (the place you sent) ===
-  const PLACE = {
-    lat: 24.4903686,
-    lng: 54.3716847,
-    label: "Humaid Al Qubaisi General Contracting & Maintenance EST."
-  };
-
-  // Generate Google Maps embed and links from the coordinates
-  const coord = `${PLACE.lat},${PLACE.lng}`;
-  const mapEmbed = `https://www.google.com/maps?q=${coord}&output=embed`;
-  const mapsLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(PLACE.label)}`;
-  const dirLink = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(coord)}`;
+  // use address-based embed (works even before GBP verification)
+  const addressQuery = encodeURIComponent(addrEN);
+  const mapEmbed = `https://www.google.com/maps?q=${addressQuery}&output=embed`;
+  const mapsLink = `https://www.google.com/maps/search/?api=1&query=${addressQuery}`;
+  const dirLink = `https://www.google.com/maps/dir/?api=1&destination=${addressQuery}`;
 
   const [loaded, setLoaded] = React.useState(false);
 
@@ -2130,13 +2125,11 @@ function MapCard({ lang }) {
             {isAR ? "الموقع على الخريطة" : "Location on the Map"}
           </h3>
         </div>
-        {/* Keep your office address */}
         <p className="mt-2 text-sm text-slate-600">
           {isAR ? addrAR : addrEN}
         </p>
       </div>
 
-      {/* Map frame */}
       <div className="relative h-[320px] w-full">
         {!loaded && (
           <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-slate-100 to-slate-200" />
@@ -2152,7 +2145,6 @@ function MapCard({ lang }) {
         <div className="pointer-events-none absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-black/5 to-transparent" />
       </div>
 
-      {/* Action buttons */}
       <div className="flex flex-col gap-2 p-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="text-xs text-slate-500">
           {isAR ? "قد تختلف الإرشادات وفق حركة المرور." : "Directions may vary with traffic."}
@@ -2181,6 +2173,7 @@ function MapCard({ lang }) {
     </div>
   );
 }
+
 
 
 // ---- Contact section (hoisted) ----
