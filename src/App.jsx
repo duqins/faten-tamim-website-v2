@@ -1211,15 +1211,14 @@ const TeamCard = ({ person, lang }) => {
   return (
     <div className="group relative flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
       {/* Photo */}
-      <div className="relative h-64 overflow-hidden">
-        <Img
-          src={person.img}
-          alt={name}
-          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-          style={{ objectPosition: person.objectPos }}
-        />
-        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white" />
-      </div>
+<div className="relative h-64 overflow-hidden bg-white">
+  <Img
+    src={person.img}
+    alt={name}
+    className="h-full w-full object-contain"
+  />
+</div>
+
 
       {/* Content */}
       <div className="flex flex-1 flex-col p-6">
