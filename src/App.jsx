@@ -837,42 +837,59 @@ const Marquee = ({ lang }) => (
 const AboutTeam = ({ lang }) => {
   const isAR = lang === "ar";
 
-  const people = PEOPLE(isAR);
+  // Re-use the same list as in Team to keep content in sync:
+  const people = [
+    {
+      name: isAR ? "د. فاتن تميم الصليبي" : "Dr. Faten Tamim Alsulebi",
+      role: isAR ? "محامية ومديرة المكتب" : "Attorney & Managing Partner",
+      desc: isAR
+        ? `أستاذة جامعية في جامعة أبوظبي في مجال القانون المدني… (نفس النص أعلاه)`
+        : `University educator in civil law at Abu Dhabi University… (same as Team)`,
+      img: IMG.team.faten,
+      objectPos: "50% 22%",
+    },
+    {
+      name: isAR ? "محمد أحمد الطوبجي" : "Mohamed Ahmed Eltobgy",
+      role: isAR ? "مستشار قانوني" : "Legal Consultant",
+      desc: isAR
+        ? `مستشار قانوني يركّز على التقاضي… (نفس النص أعلاه)`
+        : `Legal consultant focused on litigation… (same as Team)`,
+      img: IMG.team.mohamed,
+      objectPos: "50% 28%",
+    },
+    {
+      name: isAR ? "زهراء صبرينة مداح" : "Zahra Sabrina Meddah",
+      role: isAR ? "محامية ومستشارة قانونية" : "Attorney & Legal Counsel",
+      desc: isAR
+        ? `قاضية سابقة ومحامية بخبرة واسعة… (نفس النص أعلاه)`
+        : `Former judge and attorney with over 15 years… (same as Team)`,
+      img: IMG.team.zahra,
+      objectPos: "50% 35%",
+    },
+    {
+      name: isAR ? "محمد رفيق محمد أحمد إبراهيم" : "Mohamed Rafik Mohamed Ahmed Ibrahim",
+      role: isAR ? "مستشار قانوني" : "Legal Counsel",
+      desc: isAR
+        ? `مستشار قانوني ثنائي اللغة… (نفس النص أعلاه)`
+        : `Experienced and results-driven Legal Counsel… (same as Team)`,
+      img: IMG.team.rafik,
+      objectPos: "50% 30%",
+    },
+  ];
 
   return (
     <section className="mt-12" dir={isAR ? "rtl" : "ltr"}>
       <h3 className="mb-6 text-2xl font-semibold text-slate-800">
         {isAR ? "فريق العمل" : "Meet the Team"}
       </h3>
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {people.map((p) => (
-          <div
-            key={p.name}
-            className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:shadow-md"
-          >
-            <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-b from-slate-100 to-slate-200">
-              <Img
-                src={p.img}
-                alt={p.name}
-                className="absolute inset-0 h-full w-full object-cover"
-                style={{ objectPosition: p.objectPos }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/10" />
-            </div>
-            <div className="p-5 text-center">
-              <h4 className="font-serif text-lg text-slate-900">{p.name}</h4>
-              <p className="mt-1 text-sm text-slate-600">{p.role}</p>
-              <p className="mt-3 text-sm leading-7 text-slate-700 whitespace-pre-line">
-                {p.desc}
-              </p>
-            </div>
-          </div>
+      <div className="grid grid-cols-1 gap-7 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+        {people.map(p => (
+          <ProfileCard key={p.name} person={p} lang={lang} />
         ))}
       </div>
     </section>
   );
 };
-
 
 
 /* ===========================
@@ -1216,41 +1233,127 @@ His work also covers contract drafting and review, legal opinions, negotiation o
 /* ===========================
    TEAM (4 members, long bios)
 =========================== */
+/** ---------- Team UI Helpers ---------- */
+const ExpandableText = ({ text, clamp = 8, lang }) => {
+  const [open, setOpen] = React.useState(false);
+  const isAR = lang === "ar";
+  if (!text) return null;
+  return (
+    <div>
+      <p
+        className={`text-[14px] leading-7 text-slate-700 whitespace-pre-line ${
+          open ? "" : "line-clamp-" + clamp
+        }`}
+      >
+        {text}
+      </p>
+      <button
+        type="button"
+        onClick={() => setOpen(v => !v)}
+        className="mt-2 text-xs font-semibold text-amber-700 hover:underline"
+      >
+        {open ? (isAR ? "إخفاء" : "Show less") : (isAR ? "اقرأ المزيد" : "Read more")}
+      </button>
+    </div>
+  );
+};
+
+const ProfileCard = ({ person, lang }) => {
+  return (
+    <div className="group relative overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-slate-200/70 transition hover:shadow-lg">
+      {/* Gradient hairline frame */}
+      <div className="pointer-events-none absolute inset-0 rounded-3xl bg-[linear-gradient(120deg,rgba(251,191,36,0.10),transparent)]" />
+
+      {/* Image */}
+      <div className="relative overflow-hidden">
+        <Img
+          src={person.img}
+          alt={person.name}
+          className="h-[360px] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+          style={{ objectPosition: person.objectPos }}
+        />
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white to-transparent" />
+      </div>
+
+      {/* Content */}
+      <div className="p-6">
+        <h4 className="text-center font-serif text-[20px] font-semibold text-slate-900">
+          {person.name}
+        </h4>
+        <p className="mt-1 text-center text-[12px] font-medium tracking-wide text-slate-500">
+          {person.role}
+        </p>
+
+        <div className="my-5 h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+
+        <ExpandableText text={person.desc} clamp={8} lang={lang} />
+      </div>
+    </div>
+  );
+};
+
+/** ---------- TEAM (Home page) ---------- */
 const Team = ({ lang }) => {
   const isAR = lang === "ar";
-  const people = PEOPLE(isAR);
+
+  const people = [
+    {
+      name: isAR ? "د. فاتن تميم الصليبي" : "Dr. Faten Tamim Alsulebi",
+      role: isAR ? "محامية ومديرة المكتب" : "Attorney & Managing Partner",
+      desc: isAR
+        ? `أستاذة جامعية في جامعة أبوظبي في مجال القانون المدني، وأول امرأة إماراتية تنال درجة الدكتوراه في قانون الرياضة ضمن فروع القانون المدني. ترتكز خبرتها الأكاديمية والعملية على «تنظيم عقود رعاية الرياضة» — موضوع أطروحتها للدكتوراه (دراسة مقارنة بين القانون الإماراتي والمصري) — وقدّمت محاضرات متخصصة في قانون الرياضة وصياغة ومراجعة عقود الرعاية والوكالات والاتفاقات التجارية.
+
+شاركت في برامج تدريب متقدمة في سويسرا متصلة بتطبيقات لوائح قانون الرياضة على اللاعبين، وزارت الهيئة الدولية للتحكيم (جنيف) ضمن برنامج مدعوم من الجامعة الأمريكية في دبي. عمليًا، عملت في شركة أبوظبي للتوزيع (ADDC) ضمن إدارة التحقيقات مع الموظفين المخالفين للوائح، وأنشأت فريقًا تطوعيًا مؤسسيًا ناجحًا انضم إليه معظم الموظفين، كما أسست نشرة قانونية شهرية داخلية تغطي أحدث المستجدات التشريعية. تولّت كذلك متابعة شكاوى المخالفات، والعمل على عقود واتفاقيات الماء والكهرباء، وتنظيم العلاقات مع المستثمرين بصفة مستشار قانوني.
+
+قدّمت محاضرات في القانون الجنائي والمدني في عدة جهات، وأسهمت بمبادرات لدعم الجوانب الأسرية لعدد من الموظفين لتحسين سلامتهم النفسية، انطلاقًا من اهتمامها بتطوير السلوك الإنساني. وتشمل خبرتها صياغة ومراجعة العقود التجارية والرياضية (ومنها أعمال لنادي العين)، وسياسات الامتثال والحوكمة، والتفاوض على التسويات عالية الأثر — مع التزام صارم بالسرية والمهنية.`
+        : `University educator in civil law at Abu Dhabi University and the first Emirati woman to earn a PhD in sports law within the civil-law discipline. Her doctoral research — “Regulating Contracts for Sports Sponsorship (A Comparative Study between UAE and Egyptian Law)” — underpins a practice that blends rigorous scholarship with hands-on advisory for drafting and reviewing sponsorship, agency, and commercial agreements.
+
+She completed advanced training in Switzerland on the application of sports-law regulations to professional players and visited the International Court of Arbitration in Geneva through a program sponsored by the American University in Dubai. In practice, she served at Abu Dhabi Distribution Company (ADDC) within the investigations department, led inquiries into policy violations, founded a successful corporate volunteer program, and launched a monthly internal legal bulletin on regulatory updates. She also handled customer-violation complaints, negotiated and reviewed water and electricity agreements, and advised on investor relations as legal counsel.
+
+Beyond academia and corporate advisory, she delivers lectures on criminal and civil law and has led family-law support initiatives for staff well-being. Her portfolio spans commercial and sports-law contracting (including work with Al Ain Football Club), compliance and governance policies, and high-stakes negotiations — consistently prioritizing client protection, clear strategy, and confidentiality.`,
+      img: IMG.team.faten,
+      objectPos: "50% 22%",
+    },
+    {
+      name: isAR ? "محمد أحمد الطوبجي" : "Mohamed Ahmed Eltobgy",
+      role: isAR ? "مستشار قانوني" : "Legal Consultant",
+      desc: isAR
+        ? `مستشار قانوني يركّز على التقاضي وصياغة المذكرات واللوائح عبر الدعاوى المدنية والتجارية والجزائية والعمالية والأحوال الشخصية. يدير مسار الدعوى من القيد حتى التنفيذ، بما يشمل طلبات الإثبات وندب الخبراء والمرافعة الشفوية وإستراتيجيات الطعن عند الجدوى. يمتلك خبرة في صياغة ومراجعة العقود، إعداد الآراء القانونية، التفاوض على التسويات، ودعم الامتثال وإدارة المخاطر داخل الشركات. ثنائي اللغة (العربية/الإنجليزية) ويتعاون بفعالية مع الخبراء والفرق الاستشارية مع التزام كامل بالسرية وتقديم حلول عملية موجهة للنتائج.`
+        : `Legal consultant focused on litigation and written advocacy across civil, commercial, criminal, labour, and personal-status matters. He builds clear, fact-driven case theories; manages end-to-end proceedings from filing through enforcement; and handles evidence applications, expert appointments, oral pleadings, and appellate strategy where viable. His work covers contract drafting and review, legal opinions, settlement negotiations, and corporate risk and compliance support. Bilingual (Arabic/English), he collaborates closely with expert witnesses and advisory teams, maintaining strict confidentiality and delivering pragmatic, results-oriented solutions.`,
+      img: IMG.team.mohamed,
+      objectPos: "50% 28%",
+    },
+    {
+      name: isAR ? "زهراء صبرينة مداح" : "Zahra Sabrina Meddah",
+      role: isAR ? "محامية ومستشارة قانونية" : "Attorney & Legal Counsel",
+      desc: isAR
+        ? `قاضية سابقة ومحامية بخبرة واسعة تتجاوز 15 عامًا في مجالات التقاضي وتسوية النزاعات، مع تركيز خاص على القضايا التجارية والاستثمارية وقانون الشركات والنزاعات العقارية والمطالبات المالية إضافة إلى القضايا المدنية والعمالية والأحوال الشخصية والجزائية. تمتلك سجلًا متميزًا في إدارة الملفات المعقدة وصياغة المذكرات القانونية وتمثيل العملاء بفاعلية أمام الجهات القضائية. تقدّم استشارات دقيقة تستند إلى خبرة قضائية عميقة وفهم شامل للتشريعات المحلية والدولية وصياغة العقود والمذكرات القانونية، مع التزام راسخ بأعلى معايير المهنية والسرية.`
+        : `Former judge and attorney with over 15 years of extensive experience in litigation and dispute resolution, with a strong focus on commercial and investment disputes, corporate law, real-estate conflicts, financial claims, as well as civil, labour, family, and criminal cases. Proven track record in managing complex legal matters, drafting contracts, legal submissions, and pleadings, and representing clients effectively before judicial authorities. Provides precise and strategic legal advice grounded in deep judicial experience and a comprehensive understanding of local and international laws, with a steadfast commitment to the highest standards of professionalism and confidentiality.`,
+      img: IMG.team.zahra,
+      objectPos: "50% 35%",
+    },
+    {
+      name: isAR ? "محمد رفيق محمد أحمد إبراهيم" : "Mohamed Rafik Mohamed Ahmed Ibrahim",
+      role: isAR ? "مستشار قانوني" : "Legal Counsel",
+      desc: isAR
+        ? `مستشار قانوني ثنائي اللغة (العربية والإنجليزية) يتمتع بخبرة تتجاوز ثماني سنوات في دولة الإمارات ومصر، متخصص في القانون التجاري والشركات والامتثال التنظيمي والعقارات (RERA/DLD) وتسوية النزاعات والتفاوض على العقود. مثّل عملاء أمام جهات قضائية رئيسية، وأدار محافظ تقاضٍ معقدة، وتفاوض على تسويات عالية القيمة. يمتد خبرته إلى صياغة ومراجعة العقود، وقيادة إستراتيجيات القضايا، وإسداء المشورة في المعاملات العابرة للحدود، ودعم الحوكمة. قدّم أكثر من 200 استشارة وحقق نسبة نجاح 90% في التقاضي أثناء قيادة فرق عالية الأداء. حاصل على LL.M وLL.B من جامعة الإسكندرية، مع شهادات في القانون التجاري والتفاوض والتكنولوجيا القانونية والتحول الرقمي.`
+        : `Experienced and results-driven Legal Counsel with 8+ years of practice across the UAE and Egypt, specializing in corporate and commercial law, regulatory compliance, real estate (RERA/DLD), dispute resolution, and contract negotiation. He has represented clients before major UAE judicial authorities, managed complex litigation portfolios, and successfully negotiated high-value settlements. Experience spans drafting and reviewing contracts, leading case strategies, advising on cross-border transactions, and supporting corporate governance frameworks. Beyond practice, he has authored legal content, delivered 200+ consultations, and achieved a 90% litigation success rate while leading high-performing teams. LL.M and LL.B from Alexandria University; certifications in commercial law, negotiation, legal tech, and digital transformation.`,
+      img: IMG.team.rafik,
+      objectPos: "50% 30%",
+    },
+  ];
 
   return (
-    <section className="py-16 bg-white" dir={isAR ? "rtl" : "ltr"}>
+    <section className="bg-white py-16" dir={isAR ? "rtl" : "ltr"}>
       <Container>
         <SectionTitle
           title={DICT[lang].team.title}
           sub={DICT[lang].team.sub}
           icon={Building2}
         />
-        <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {people.map((p) => (
-            <div
-              key={p.name}
-              className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:shadow-md"
-            >
-              <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-b from-slate-100 to-slate-200">
-                <Img
-                  src={p.img}
-                  alt={p.name}
-                  className="absolute inset-0 h-full w-full object-cover"
-                  style={{ objectPosition: p.objectPos }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/10" />
-              </div>
-              <div className="p-5 text-center">
-                <h4 className="font-serif text-lg text-slate-900">{p.name}</h4>
-                <p className="mt-1 text-sm text-slate-600">{p.role}</p>
-                <p className="mt-3 text-sm leading-7 text-slate-700 whitespace-pre-line">
-                  {p.desc}
-                </p>
-              </div>
-            </div>
+        <div className="mt-8 grid grid-cols-1 gap-7 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+          {people.map(p => (
+            <ProfileCard key={p.name} person={p} lang={lang} />
           ))}
         </div>
       </Container>
@@ -1258,78 +1361,6 @@ const Team = ({ lang }) => {
   );
 };
 
-
-
-
-const Accolades = ({ lang }) => (
-  <div className="bg-gradient-to-b from-white to-amber-50/40 py-16">
-    <Container>
-      <SectionTitle title={DICT[lang].accolades.title} icon={Crown} />
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-        {DICT[lang].accolades.points.map((p) => (
-          <div
-            key={p}
-            className="flex items-start gap-3 rounded-2xl border border-amber-200/60 bg-white/80 p-5"
-          >
-            <Star className="mt-1 h-5 w-5 text-amber-600" />
-            <p className="text-slate-700">{p}</p>
-          </div>
-        ))}
-      </div>
-    </Container>
-  </div>
-);
-
-const Testimonials = ({ lang }) => {
-  const items = [
-    {
-      quote:
-        lang === "ar"
-          ? "تعامل احترافي ونصيحة واضحة منذ اليوم الأول."
-          : "Professional handling and clear advice from day one.",
-      name: "Corporate Client",
-    },
-    {
-      quote:
-        lang === "ar"
-          ? "وقفوا معنا خطوة بخطوة حتى صدور الحكم."
-          : "They stood with us step by step until judgment.",
-      name: "Litigation Client",
-    },
-    {
-      quote:
-        lang === "ar"
-          ? "أسلوب راقٍ واحترام كامل لخصوصيتنا."
-          : "Refined approach with full respect to our privacy.",
-      name: "Family Law Client",
-    },
-  ];
-  return (
-    <Container>
-      <div className="py-16">
-        <SectionTitle icon={Quote} title={DICT[lang].testimonials.title} />
-        <div className="overflow-x-auto">
-          <div className="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4">
-            {items.map((t, i) => (
-              <div
-                key={i}
-                className="snap-center shrink-0 basis-[90%] rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:basis-[46%] lg:basis-[30%]"
-              >
-                <p className="min-h-[90px] text-slate-700">“{t.quote}”</p>
-                <div className="mt-4 flex items-center gap-3 text-sm text-slate-500">
-                  <ShieldCheck className="h-4 w-4 text-amber-700" />
-                  <span>{t.name}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </Container>
-  );
-};
-
-// Footer
 // Footer
 const Footer = ({ lang }) => {
   const D = DICT[lang];
