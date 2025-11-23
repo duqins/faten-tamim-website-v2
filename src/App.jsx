@@ -782,20 +782,47 @@ const Marquee = ({ lang }) => (
   </div>
 );
 
+/* ===========================
+   ABOUT TEAM (4 cards)
+=========================== */
 const AboutTeam = ({ lang }) => {
   const isAR = lang === "ar";
   const people = [
     {
       name: isAR ? "د. فاتن تميم الصليبي" : "Dr. Faten Tamim Alsulebi",
       role: isAR ? "محامية ومديرة المكتب" : "Attorney & Managing Partner",
+      desc: isAR
+        ? "تشرف على إدارة المكتب وتحديد الاستراتيجية القانونية العامة، بخبرة تمتد لأكثر من 15 عاماً في التقاضي والاستشارات."
+        : "Manages the firm and leads overall legal strategy with 15+ years’ experience in litigation and advisory.",
       img: IMG.team.faten,
       objectPos: "50% 22%",
     },
     {
       name: isAR ? "محمد أحمد الطوبجي" : "Mohamed Ahmed Eltobgy",
       role: isAR ? "مستشار قانوني" : "Legal Consultant",
+      desc: isAR
+        ? "يختص بصياغة المذكرات وإعداد المرافعات ومتابعة الدعاوى في مختلف درجات التقاضي."
+        : "Focuses on pleadings, legal memoranda, and litigation at all levels of court.",
       img: IMG.team.mohamed,
       objectPos: "50% 28%",
+    },
+    {
+      name: isAR ? "سارة المنصوري" : "Sarah Al Mansoori",
+      role: isAR ? "مستشارة شركات وعقود" : "Corporate & Contracts Counsel",
+      desc: isAR
+        ? "تقدّم استشارات تأسيس الشركات وصياغة العقود التجارية والحوكمة للشركات داخل وخارج الدولة."
+        : "Advises on company formation, commercial contracts, and corporate governance for UAE and international clients.",
+      img: IMG.team.sarah,
+      objectPos: "50% 35%",
+    },
+    {
+      name: isAR ? "حسن النعيمي" : "Hassan Al Nuaimi",
+      role: isAR ? "مختص التقاضي والتنفيذ" : "Litigation & Enforcement Specialist",
+      desc: isAR
+        ? "يدير ملفات التنفيذ والإجراءات القضائية، مع تركيز على السرعة والدقة في إنجاز القضايا."
+        : "Manages enforcement and procedural litigation with a focus on accuracy and timely outcomes.",
+      img: IMG.team.hassan,
+      objectPos: "50% 30%",
     },
   ];
 
@@ -804,7 +831,7 @@ const AboutTeam = ({ lang }) => {
       <h3 className="mb-6 text-2xl font-semibold text-slate-800">
         {isAR ? "فريق العمل" : "Meet the Team"}
       </h3>
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {people.map((p) => (
           <div
             key={p.name}
@@ -824,6 +851,7 @@ const AboutTeam = ({ lang }) => {
             <div className="p-5 text-center">
               <h4 className="font-serif text-lg text-slate-900">{p.name}</h4>
               <p className="mt-1 text-sm text-slate-600">{p.role}</p>
+              <p className="mt-3 text-sm leading-6 text-slate-700">{p.desc}</p>
             </div>
           </div>
         ))}
@@ -831,6 +859,7 @@ const AboutTeam = ({ lang }) => {
     </section>
   );
 };
+
 
 /* ===========================
    ABOUT
@@ -910,7 +939,6 @@ const About = ({ lang, showTeam = false }) => {
         </section>
       )}
       {/* Gallery */}
-// inside About's gallery section
 {gallery.length > 0 && (
   <section className="mt-10">
     <h2 className="text-xl font-semibold text-slate-800 mb-4">
