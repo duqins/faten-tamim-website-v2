@@ -832,65 +832,7 @@ const Marquee = ({ lang }) => (
   </div>
 );
 
-/* ===========================
-   ABOUT TEAM (same 4 members)
-=========================== */
-const AboutTeam = ({ lang }) => {
-  const isAR = lang === "ar";
 
-  // Re-use the same list as in Team to keep content in sync:
-  const people = [
-    {
-      name: isAR ? "د. فاتن تميم الصليبي" : "Dr. Faten Tamim Alsulebi",
-      role: isAR ? "محامية ومديرة المكتب" : "Attorney & Managing Partner",
-      desc: isAR
-        ? `أستاذة جامعية في جامعة أبوظبي في مجال القانون المدني… (نفس النص أعلاه)`
-        : `University educator in civil law at Abu Dhabi University… (same as Team)`,
-      img: IMG.team.faten,
-      objectPos: "50% 22%",
-    },
-    {
-      name: isAR ? "محمد أحمد الطوبجي" : "Mohamed Ahmed Eltobgy",
-      role: isAR ? "مستشار قانوني" : "Legal Consultant",
-      desc: isAR
-        ? `مستشار قانوني يركّز على التقاضي… (نفس النص أعلاه)`
-        : `Legal consultant focused on litigation… (same as Team)`,
-      img: IMG.team.mohamed,
-      objectPos: "50% 28%",
-    },
-    {
-      name: isAR ? "زهراء صبرينة مداح" : "Zahra Sabrina Meddah",
-      role: isAR ? "محامية ومستشارة قانونية" : "Attorney & Legal Counsel",
-      desc: isAR
-        ? `قاضية سابقة ومحامية بخبرة واسعة… (نفس النص أعلاه)`
-        : `Former judge and attorney with over 15 years… (same as Team)`,
-      img: IMG.team.zahra,
-      objectPos: "50% 35%",
-    },
-    {
-      name: isAR ? "محمد رفيق محمد أحمد إبراهيم" : "Mohamed Rafik Mohamed Ahmed Ibrahim",
-      role: isAR ? "مستشار قانوني" : "Legal Counsel",
-      desc: isAR
-        ? `مستشار قانوني ثنائي اللغة… (نفس النص أعلاه)`
-        : `Experienced and results-driven Legal Counsel… (same as Team)`,
-      img: IMG.team.rafik,
-      objectPos: "50% 30%",
-    },
-  ];
-
-  return (
-    <section className="mt-12" dir={isAR ? "rtl" : "ltr"}>
-      <h3 className="mb-6 text-2xl font-semibold text-slate-800">
-        {isAR ? "فريق العمل" : "Meet the Team"}
-      </h3>
-      <div className="grid grid-cols-1 gap-7 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
-        {people.map(p => (
-          <ProfileCard key={p.name} person={p} lang={lang} />
-        ))}
-      </div>
-    </section>
-  );
-};
 
 
 /* ===========================
