@@ -1277,14 +1277,13 @@ const AboutTeam = ({ lang }) => {
 /* ===========================
    PERSON DETAIL PAGE
 =========================== */
+/* ===========================
+   PERSON DETAIL PAGE (photo on the side)
+=========================== */
 const PersonPage = ({ lang }) => {
   const { slug } = useParams();
   const isAR = lang === "ar";
   const p = PEOPLE_DB.find((x) => x.slug === slug);
-
-  useEffect(() => {
-    if (p) document.title = `${isAR ? p.nameAR : p.nameEN} – ${isAR ? BRAND.nameAR : BRAND.nameEN}`;
-  }, [slug, lang]); // eslint-disable-line
 
   if (!p) return <NotFound lang={lang} />;
 
@@ -1293,45 +1292,30 @@ const PersonPage = ({ lang }) => {
   const longTxt = isAR ? p.longAR : p.longEN;
 
   return (
-    <div className="bg-white">
-      <div className="relative isolate">
-        <div className="relative h-[280px] overflow-hidden">
-          <Img
-            src={p.img}
-            alt={name}
-            className="h-full w-full object-cover"
-            style={{ objectPosition: p.objectPos }}
-          />
-          <div className="absolute inset-0 bg-slate-900/60" />
-          <Container>
-            <div className="relative z-10 py-10 text-white">
-              <div className="flex items-end gap-4">
-                <div className="hidden overflow-hidden rounded-2xl ring-2 ring-white/80 md:block">
-                  <Img
-                    src={p.img}
-                    alt={name}
-                    className="h-36 w-28 object-cover"
-                    style={{ objectPosition: p.objectPos }}
-                  />
-                </div>
-                <div>
-                  <h1 className="font-serif text-3xl md:text-4xl">{name}</h1>
-                  <p className="mt-1 text-white/85">{role}</p>
-                </div>
-              </div>
-            </div>
-          </Container>
-        </div>
-      </div>
-
+    <div className="bg-white py-16" dir={isAR ? "rtl" : "ltr"}>
       <Container>
-        <div className="grid grid-cols-1 gap-10 py-12 lg:grid-cols-12" dir={isAR ? "rtl" : "ltr"}>
-          <article className="prose prose-slate max-w-none text-slate-800 lg:col-span-8">
-            <p className="whitespace-pre-line leading-8">{longTxt}</p>
-          </article>
+        <div className="grid grid-cols-1 md:grid-cols-3 items-start gap-10">
+          {/* LEFT: Image */}
+          <div className="overflow-hidden rounded-3xl shadow-lg md:col-span-1">
+            <Img
+              src={p.img}
+              alt={name}
+              className="h-[420px] w-full object-cover object-center"
+            />
+          </div>
 
-          <aside className="lg:col-span-4">
-            <div className="sticky top-24 space-y-4">
+          {/* RIGHT: Info */}
+          <div className="md:col-span-2">
+            <h1 className="font-serif text-3xl font-semibold text-slate-900">
+              {name}
+            </h1>
+            <p className="mt-1 text-sm text-slate-600">{role}</p>
+
+            <p className="mt-6 whitespace-pre-line text-[15px] leading-8 text-slate-700">
+              {longTxt}
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 to="/"
                 className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 hover:border-amber-300 hover:text-amber-700"
@@ -1339,27 +1323,21 @@ const PersonPage = ({ lang }) => {
                 ← {isAR ? "العودة للرئيسية" : "Back to Home"}
               </Link>
 
-              <div className="rounded-2xl border border-slate-200 bg-white p-5">
-                <h4 className="mb-2 font-semibold text-slate-800">
-                  {isAR ? "حجز استشارة" : "Book a Consultation"}
-                </h4>
-                <p className="text-sm text-slate-600">
-                  {isAR ? "أرسل لنا تفاصيل قضيتك وسنتواصل معك." : "Send us your case details and we’ll get in touch."}
-                </p>
-                <Link
-                  to="/contact"
-                  className="mt-3 inline-flex items-center gap-2 rounded-xl bg-amber-600 px-4 py-2 text-white"
-                >
-                  <Handshake className="h-4 w-4" /> {isAR ? "ابدأ الآن" : "Get Started"}
-                </Link>
-              </div>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 rounded-xl bg-amber-600 px-4 py-2 text-sm font-medium text-white hover:bg-amber-700"
+              >
+                <Handshake className="h-4 w-4" />
+                {isAR ? "احجز استشارة" : "Book a Consultation"}
+              </Link>
             </div>
-          </aside>
+          </div>
         </div>
       </Container>
     </div>
   );
 };
+
 
 
 // Footer
