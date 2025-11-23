@@ -1330,6 +1330,7 @@ const Testimonials = ({ lang }) => {
 };
 
 // Footer
+// Footer
 const Footer = ({ lang }) => {
   const D = DICT[lang];
 
@@ -1342,15 +1343,12 @@ const Footer = ({ lang }) => {
           <div>
             <div className="flex items-center gap-3">
               <Img
-  src="/logo.svg"
-  alt={BRAND.nameEN}
-  className="h-[64px] w-auto select-none object-contain drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]"
-  loading="lazy"
-  decoding="async"
-/>
-
-
-
+                src="/logo.svg"
+                alt={BRAND.nameEN}
+                className="h-[64px] w-auto select-none object-contain drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]"
+                loading="lazy"
+                decoding="async"
+              />
               <div>
                 <div className="font-serif text-lg font-semibold text-slate-800">
                   {lang === "ar" ? BRAND.nameAR : BRAND.nameEN}
@@ -1364,7 +1362,7 @@ const Footer = ({ lang }) => {
             {/* Socials */}
             <div className="mt-4 flex items-center gap-3 text-slate-500">
               <a
-                href={BRAND.linkedin || "https://www.linkedin.com"}
+                href={BRAND.linkedin}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
@@ -1374,7 +1372,7 @@ const Footer = ({ lang }) => {
               </a>
 
               <a
-                href={BRAND.snapchat || "https://snapchat.com"}
+                href={BRAND.snapchat}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Snapchat"
@@ -1384,7 +1382,7 @@ const Footer = ({ lang }) => {
               </a>
 
               <a
-                href={BRAND.instagram || "https://instagram.com"}
+                href={BRAND.instagram}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
@@ -1459,12 +1457,12 @@ const Footer = ({ lang }) => {
             </div>
 
             <div className="flex flex-wrap justify-center gap-4">
-  <Link className="hover:text-amber-700" to="/privacy">{D.footer.privacy}</Link>
-  <Link className="hover:text-amber-700" to="/terms">{D.footer.terms}</Link>
-  <Link className="hover:text-amber-700" to="/disclaimer">{lang === "ar" ? "إخلاء المسؤولية" : "Disclaimer"}</Link>
-  <Link className="hover:text-amber-700" to="/cookies">{lang === "ar" ? "سياسة الكوكيز" : "Cookie Policy"}</Link>
-</div>
-
+              <Link className="hover:text-amber-700" to="/privacy">{D.footer.privacy}</Link>
+              <Link className="hover:text-amber-700" to="/terms">{D.footer.terms}</Link>
+              <Link className="hover:text-amber-700" to="/disclaimer">{lang === "ar" ? "إخلاء المسؤولية" : "Disclaimer"}</Link>
+              <Link className="hover:text-amber-700" to="/cookies">{lang === "ar" ? "سياسة الكوكيز" : "Cookie Policy"}</Link>
+            </div>
+          </div> {/* ✅ fixed: closes flex row */}
 
           <div
             className="mt-6 cursor-pointer text-center text-[11px] text-slate-400 transition-colors hover:text-amber-600"
@@ -1479,6 +1477,9 @@ const Footer = ({ lang }) => {
 };
 
 
+// ===========================
+// InsidePractice Section
+// ===========================
 const InsidePractice = ({ lang }) => {
   const title = lang === "ar" ? "من داخل مكتبنا" : "Inside Our Practice";
   const images = [
@@ -1522,6 +1523,7 @@ const InsidePractice = ({ lang }) => {
     </section>
   );
 };
+
 
 /* ===========================
    HOMEPAGE COMPOSER
