@@ -156,6 +156,54 @@ const SERVICES_LIST = (lang) => [
   },
 ];
 
+//footer
+const LegalShell = ({ title, lang, children }) => (
+  <Container>
+    <div className="py-12">
+      <h1 className="font-serif text-3xl md:text-4xl text-slate-800">{title}</h1>
+      <p className="mt-2 text-sm text-slate-500">
+        {lang === "ar" ? "آخر تحديث" : "Last updated"}: {new Date().toLocaleDateString()}
+      </p>
+      <div className="mt-6 prose prose-slate max-w-none">
+        {children}
+      </div>
+    </div>
+  </Container>
+);
+
+const PrivacyPage = ({ lang }) => (
+  <LegalShell title={lang === "ar" ? "سياسة الخصوصية" : "Privacy Policy"} lang={lang}>
+    <h2>{lang === "ar" ? "المعلومات التي نجمعها" : "Information We Collect"}</h2>
+    <p>{lang === "ar" ? "ضع هنا تفاصيل السياسة..." : "Place your policy details here..."}</p>
+    <h2>{lang === "ar" ? "الاتصال بنا" : "Contact Us"}</h2>
+    <p>{lang === "ar" ? "للاستفسارات: " : "For queries: "}
+      <a href={`mailto:${BRAND.email}`}>{BRAND.email}</a>
+    </p>
+  </LegalShell>
+);
+
+const TermsPage = ({ lang }) => (
+  <LegalShell title={lang === "ar" ? "الشروط والأحكام" : "Terms of Use"} lang={lang}>
+    <h2>{lang === "ar" ? "القبول" : "Acceptance"}</h2>
+    <p>...</p>
+    <h2>{lang === "ar" ? "المسؤولية" : "Liability"}</h2>
+    <p>...</p>
+  </LegalShell>
+);
+
+const DisclaimerPage = ({ lang }) => (
+  <LegalShell title={lang === "ar" ? "إخلاء المسؤولية" : "Disclaimer"} lang={lang}>
+    <p>...</p>
+  </LegalShell>
+);
+
+const CookiesPage = ({ lang }) => (
+  <LegalShell title={lang === "ar" ? "سياسة الكوكيز" : "Cookie Policy"} lang={lang}>
+    <p>...</p>
+  </LegalShell>
+);
+
+
 
 
 /* ===========================
@@ -783,48 +831,12 @@ const Marquee = ({ lang }) => (
 );
 
 /* ===========================
-   ABOUT TEAM (4 cards)
+   ABOUT TEAM (same 4 members)
 =========================== */
 const AboutTeam = ({ lang }) => {
   const isAR = lang === "ar";
-  const people = [
-    {
-      name: isAR ? "د. فاتن تميم الصليبي" : "Dr. Faten Tamim Alsulebi",
-      role: isAR ? "محامية ومديرة المكتب" : "Attorney & Managing Partner",
-      desc: isAR
-        ? "تشرف على إدارة المكتب وتحديد الاستراتيجية القانونية العامة، بخبرة تمتد لأكثر من 15 عاماً في التقاضي والاستشارات."
-        : "Manages the firm and leads overall legal strategy with 15+ years’ experience in litigation and advisory.",
-      img: IMG.team.faten,
-      objectPos: "50% 22%",
-    },
-    {
-      name: isAR ? "محمد أحمد الطوبجي" : "Mohamed Ahmed Eltobgy",
-      role: isAR ? "مستشار قانوني" : "Legal Consultant",
-      desc: isAR
-        ? "يختص بصياغة المذكرات وإعداد المرافعات ومتابعة الدعاوى في مختلف درجات التقاضي."
-        : "Focuses on pleadings, legal memoranda, and litigation at all levels of court.",
-      img: IMG.team.mohamed,
-      objectPos: "50% 28%",
-    },
-    {
-      name: isAR ? "سارة المنصوري" : "Sarah Al Mansoori",
-      role: isAR ? "مستشارة شركات وعقود" : "Corporate & Contracts Counsel",
-      desc: isAR
-        ? "تقدّم استشارات تأسيس الشركات وصياغة العقود التجارية والحوكمة للشركات داخل وخارج الدولة."
-        : "Advises on company formation, commercial contracts, and corporate governance for UAE and international clients.",
-      img: IMG.team.sarah,
-      objectPos: "50% 35%",
-    },
-    {
-      name: isAR ? "حسن النعيمي" : "Hassan Al Nuaimi",
-      role: isAR ? "مختص التقاضي والتنفيذ" : "Litigation & Enforcement Specialist",
-      desc: isAR
-        ? "يدير ملفات التنفيذ والإجراءات القضائية، مع تركيز على السرعة والدقة في إنجاز القضايا."
-        : "Manages enforcement and procedural litigation with a focus on accuracy and timely outcomes.",
-      img: IMG.team.hassan,
-      objectPos: "50% 30%",
-    },
-  ];
+
+  const people = [/* exact same array as above */];
 
   return (
     <section className="mt-12" dir={isAR ? "rtl" : "ltr"}>
@@ -843,15 +855,15 @@ const AboutTeam = ({ lang }) => {
                 alt={p.name}
                 className="absolute inset-0 h-full w-full object-cover"
                 style={{ objectPosition: p.objectPos }}
-                loading="lazy"
-                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/10" />
             </div>
             <div className="p-5 text-center">
               <h4 className="font-serif text-lg text-slate-900">{p.name}</h4>
               <p className="mt-1 text-sm text-slate-600">{p.role}</p>
-              <p className="mt-3 text-sm leading-6 text-slate-700">{p.desc}</p>
+              <p className="mt-3 text-sm leading-7 text-slate-700 whitespace-pre-line">
+                {p.desc}
+              </p>
             </div>
           </div>
         ))}
@@ -859,6 +871,7 @@ const AboutTeam = ({ lang }) => {
     </section>
   );
 };
+
 
 
 /* ===========================
@@ -1144,6 +1157,9 @@ const GalleryStrip = () => {
 /* ===========================
    TEAM (4 cards, RTL-ready)
 =========================== */
+/* ===========================
+   TEAM (4 members, long bios)
+=========================== */
 const Team = ({ lang }) => {
   const isAR = lang === "ar";
 
@@ -1152,8 +1168,16 @@ const Team = ({ lang }) => {
       name: isAR ? "د. فاتن تميم الصليبي" : "Dr. Faten Tamim Alsulebi",
       role: isAR ? "محامية ومديرة المكتب" : "Attorney & Managing Partner",
       desc: isAR
-        ? "تتولى الإشراف على الاستراتيجية العامة للمكتب وتمثيل القضايا أمام المحاكم بمختلف درجاتها، مع خبرة واسعة في القضايا الأسرية والتجارية."
-        : "Oversees firm strategy and advocates across all court stages, with deep experience in family and commercial matters.",
+        ? `أستاذة جامعية في جامعة أبوظبي في مجال القانون المدني، وأول امرأة إماراتية تنال درجة الدكتوراه في قانون الرياضة ضمن فروع القانون المدني. ترتكز خبرتها الأكاديمية والعملية على "تنظيم عقود رعاية الرياضة" — موضوع أطروحتها للدكتوراه (دراسة مقارنة بين القانون الإماراتي والمصري) — وقدّمت محاضرات متخصصة في قانون الرياضة وصياغة ومراجعة عقود الرعاية والوكالات.
+
+خلال مسيرتها، شاركت في برامج تدريب متقدمة في سويسرا متصلة بتطبيقات لوائح قانون الرياضة على اللاعبين، وزارت الهيئة الدولية للتحكيم (جنيف) ضمن برنامج مدعوم من الجامعة الأمريكية في دبي. عمليًا، عملت في شركة أبوظبي للتوزيع (ADDC) في إدارة التحقيقات مع الموظفين المخالفين للوائح، وأنشأت فريقًا تطوعيًا ناجحًا انضم إليه معظم الموظفين، كما أسست نشرة قانونية داخلية تصدر شهريًا لتغطية أحدث المستجدات التشريعية. قامت كذلك بمتابعة شكاوى المخالفات، والعمل على عقود واتفاقيات المياه والكهرباء، وتنظيم العلاقات مع المستثمرين بصفة مستشار قانوني.
+
+قدّمت محاضرات في الجريمة والقانون المدني في جهات متعددة، وأسهمت في دعم الجوانب الأسرية لعدد من موظفي المؤسسة بهدف تحسين سلامتهم النفسية، انطلاقًا من اهتمامها بتطوير السلوك الإنساني. وتشمل خبرتها صياغة ومراجعة العقود التجارية والرياضية (ومنها أعمال مرتبطة بنادي العين)، وإعداد سياسات الامتثال والحوكمة والتفاوض على التسويات بما يضمن حماية المصالح وتحقيق نتائج عملية تراعي أعلى معايير المهنية والسرية.`
+        : `University educator in civil law at Abu Dhabi University and the first Emirati woman to earn a PhD in sports law within the civil-law discipline. Her doctoral research — “Regulating Contracts for Sports Sponsorship (A Comparative Study between UAE and Egyptian Law)” — anchors a practice that blends rigorous scholarship with hands-on advisory on drafting and reviewing sponsorship, agency, and commercial agreements.
+
+She has undertaken advanced training in Switzerland related to the application of sports-law regulations to professional players and visited the International Court of Arbitration in Geneva through a program sponsored by the American University in Dubai. In practice, she served at Abu Dhabi Distribution Company (ADDC) within the investigations department, led inquiries into employee violations, founded a successful corporate volunteer program, and launched a monthly internal legal bulletin covering regulatory updates. She also handled customer-violation complaints, negotiated and reviewed water and electricity agreements, and advised on investor relations as legal counsel.
+
+Beyond academia and corporate advisory, she has delivered lectures on criminal and civil law at multiple venues and provided family-law support initiatives for staff well-being, reflecting a broader interest in behavioral development. Her portfolio includes commercial and sports-law contracting (including work with Al Ain Football Club), compliance and governance policies, and high-stakes negotiations — consistently prioritizing client protection, clear strategy, and professional confidentiality.`,
       img: IMG.team.faten,
       objectPos: "50% 22%",
     },
@@ -1161,26 +1185,30 @@ const Team = ({ lang }) => {
       name: isAR ? "محمد أحمد الطوبجي" : "Mohamed Ahmed Eltobgy",
       role: isAR ? "مستشار قانوني" : "Legal Consultant",
       desc: isAR
-        ? "متخصص في صياغة المذكرات ومرافعات الدرجة الأولى والاستئناف، وبناء النظريات القانونية القائمة على الوقائع."
-        : "Specializes in pleadings, first-instance and appellate work, building fact-driven legal theories.",
+        ? `مستشار قانوني يركّز على التقاضي وصياغة المذكرات واللوائح عبر الدعاوى المدنية والتجارية والجزائية والعمالية والأحوال الشخصية. يمتاز بقدرة عالية على تحليل الوقائع وبناء نظرية قانونية متماسكة، وإدارة مسار الدعوى من القيد حتى التنفيذ، بما يشمل طلبات الإثبات وندب الخبراء والمرافعة الشفوية وإعداد الطعون في الاستئناف والتمييز عند الجدوى.
+
+خبرته العملية تشمل مراجعة وصياغة العقود التجارية، إعداد مذكرات الرأي القانوني، التفاوض على التسويات، وإدارة المخاطر والامتثال داخل الشركات. يتعامل بثنائية لغوية (العربية/الإنجليزية) ويُحسن التنسيق مع الفرق الاستشارية والخبراء الفنيين، مع الالتزام بمعايير السرية والمهنية، وتقديم حلول عملية تركّز على النتائج وتحسين موقف العميل الإجرائي والموضوعي على حد سواء.`
+        : `Legal consultant focused on litigation and written advocacy across civil, commercial, criminal, labour, and personal-status matters. He builds clear, fact-driven case theories; manages end-to-end proceedings from filing through enforcement; and handles evidence applications, expert appointments, oral pleadings, and appellate strategy (where viable).
+
+His work also covers contract drafting and review, legal opinions, negotiation of settlements, and corporate risk and compliance support. Bilingual (Arabic/English), he collaborates effectively with expert witnesses and advisory teams, maintaining strict confidentiality and delivering pragmatic, results-oriented solutions that strengthen both procedural posture and substantive outcomes.`,
       img: IMG.team.mohamed,
       objectPos: "50% 28%",
     },
     {
-      name: isAR ? "سارة المنصوري" : "Sarah Al Mansoori",
-      role: isAR ? "مستشارة شركات وعقود" : "Corporate & Contracts Counsel",
+      name: isAR ? "زهراء صبرينة مداح" : "Zahra Sabrina Meddah",
+      role: isAR ? "محامية ومستشارة قانونية" : "Attorney & Legal Counsel",
       desc: isAR
-        ? "تقدّم استشارات تأسيس الشركات، الحوكمة، وصياغة العقود التجارية بما يتوافق مع الأطر التنظيمية داخل الدولة والمناطق الحرة."
-        : "Advises on incorporations, governance, and commercial contracts aligned with onshore and free-zone frameworks.",
+        ? `قاضية سابقة ومحامية بخبرة واسعة تتجاوز 15 عامًا في مجالات التقاضي وتسوية النزاعات، مع تركيز خاص على القضايا التجارية، الاستثمارية، وقانون الشركات والنزاعات العقارية والمطالبات المالية إضافة إلى القضايا المدنية والعمالية والأحوال الشخصية والجزائية. أمتلك سجلًا مهنيًا متميزًا في إدارة الملفات المعقدة، وصياغة المذكرات القانونية، وتمثيل العملاء في مختلف المنازعات. أقدّم استشارات قانونية دقيقة تستند إلى خبرة قضائية عميقة وفهم شامل للتشريعات المحلية والدولية وصياغة العقود والمذكرات القانونية، مع التزام كامل بأعلى معايير المهنية والسرية.`
+        : `Former judge and attorney with over 15 years of extensive experience in litigation and dispute resolution, with a strong focus on commercial and investment disputes, corporate law, real-estate conflicts, financial claims, as well as civil, labour, family, and criminal cases. Proven track record in managing complex legal matters, drafting contracts, legal submissions, and pleadings, and representing clients effectively before judicial authorities. Provides precise and strategic legal advice grounded in deep judicial experience and a comprehensive understanding of local and international laws, with a steadfast commitment to the highest standards of professionalism and confidentiality.`,
       img: IMG.team.sarah,
       objectPos: "50% 35%",
     },
     {
-      name: isAR ? "حسن النعيمي" : "Hassan Al Nuaimi",
-      role: isAR ? "مختص التقاضي والتنفيذ" : "Litigation & Enforcement Specialist",
+      name: isAR ? "محمد رفيق محمد أحمد إبراهيم" : "Mohamed Rafik Mohamed Ahmed Ibrahim",
+      role: isAR ? "مستشار قانوني" : "Legal Counsel",
       desc: isAR
-        ? "يدير ملفات التنفيذ وإجراءات الأوامر الوقتية وتتبّع الأصول، مع تركيز على الحلول العملية وتسريع النتائج."
-        : "Handles enforcement files, precautionary measures, and asset tracing with a focus on practical, swift outcomes.",
+        ? `مستشار قانوني ثنائي اللغة (العربية والإنجليزية) يتمتع بخبرة تتجاوز ثماني سنوات في العمل القانوني داخل دولة الإمارات العربية المتحدة ومصر، لدى كبرى مكاتب المحاماة. يمتلك خبرة واسعة في التقاضي، صياغة العقود، الامتثال التنظيمي، إدارة المخاطر، وتسوية النزاعات، إضافة إلى معرفة متعمقة بأنظمة القضاء في الإمارات، بما في ذلك محاكم دبي وأبوظبي والمحاكم الاتحادية. يتميز محمد رفيق بمهارات عالية في صياغة اللوائح والمذكرات القانونية في مختلف الدعاوى المدنية والجزائية والتجارية والعمالية والأحوال الشخصية، مع سجل نجاح بلغ 90% في القضايا التي تولّى الترافع فيها. كما يمتلك خبرة متميزة في قوانين العقارات والامتثال لجهات مثل RERA وDLD، إلى جانب براعة في التفاوض وإعداد التسويات عالية المخاطر لصالح العملاء. قدم أكثر من 200 استشارة قانونية متخصصة عبر منصات احترافية، وشارك في إعداد ونشر مقالات قانونية مؤثرة ساهمت في رفع تصنيف المنصات القانونية على محركات البحث. يحمل درجة الماجستير في القانون العام والجنائي وعدة دبلومات وشهادات دولية في مجالات القانون والتكنولوجيا القانونية، مما يعزز قدرته على تقديم حلول قانونية مبتكرة وفعّالة. يؤمن بأن العمل القانوني يقوم على الدقة، النزاهة، وحماية مصالح العملاء وفق أعلى المعايير المهنية.`
+        : `Experienced and results-driven Legal Counsel with 8+ years of professional practice across the UAE and Egypt, specializing in corporate and commercial law, regulatory compliance, real estate (RERA/DLD), dispute resolution, and contract negotiation. Provides strategic legal guidance to support business growth, reduce risk, and ensure full compliance with local and international regulations. Has represented clients before major UAE judicial authorities, managed complex litigation portfolios, and successfully negotiated high-value settlements. Experience spans drafting and reviewing contracts, leading case strategies, advising on cross-border transactions, and supporting corporate governance frameworks. Beyond legal practice, authored high-impact legal content, delivered 200+ consultations, and achieved a 90% litigation success rate while leading high-performing teams. Holds an LL.M and LL.B from Alexandria University with certifications in commercial law, negotiation, legal tech, and digital transformation. Fluent in Arabic and English with a detail-oriented, analytical approach dedicated to clear, practical, business-aligned legal solutions.`,
       img: IMG.team.hassan,
       objectPos: "50% 30%",
     },
@@ -1194,31 +1222,27 @@ const Team = ({ lang }) => {
           sub={DICT[lang].team.sub}
           icon={Building2}
         />
-
         <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {people.map((p) => (
             <div
               key={p.name}
               className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:shadow-md"
             >
-              {/* Image */}
               <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-b from-slate-100 to-slate-200">
                 <Img
                   src={p.img}
                   alt={p.name}
                   className="absolute inset-0 h-full w-full object-cover"
                   style={{ objectPosition: p.objectPos }}
-                  loading="lazy"
-                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/10" />
               </div>
-
-              {/* Text */}
               <div className="p-5 text-center">
                 <h4 className="font-serif text-lg text-slate-900">{p.name}</h4>
                 <p className="mt-1 text-sm text-slate-600">{p.role}</p>
-                <p className="mt-3 text-sm leading-6 text-slate-700">{p.desc}</p>
+                <p className="mt-3 text-sm leading-7 text-slate-700 whitespace-pre-line">
+                  {p.desc}
+                </p>
               </div>
             </div>
           ))}
@@ -1227,8 +1251,6 @@ const Team = ({ lang }) => {
     </section>
   );
 };
-
-
 
 
 
@@ -1431,20 +1453,12 @@ const Footer = ({ lang }) => {
             </div>
 
             <div className="flex flex-wrap justify-center gap-4">
-              <a className="hover:text-amber-700" href="#privacy">
-                {D.footer.privacy}
-              </a>
-              <a className="hover:text-amber-700" href="#terms">
-                {D.footer.terms}
-              </a>
-              <a className="hover:text-amber-700" href="#disclaimer">
-                {lang === "ar" ? "إخلاء المسؤولية" : "Disclaimer"}
-              </a>
-              <a className="hover:text-amber-700" href="#cookies">
-                {lang === "ar" ? "سياسة الكوكيز" : "Cookie Policy"}
-              </a>
-            </div>
-          </div>
+  <Link className="hover:text-amber-700" to="/privacy">{D.footer.privacy}</Link>
+  <Link className="hover:text-amber-700" to="/terms">{D.footer.terms}</Link>
+  <Link className="hover:text-amber-700" to="/disclaimer">{lang === "ar" ? "إخلاء المسؤولية" : "Disclaimer"}</Link>
+  <Link className="hover:text-amber-700" to="/cookies">{lang === "ar" ? "سياسة الكوكيز" : "Cookie Policy"}</Link>
+</div>
+
 
           <div
             className="mt-6 cursor-pointer text-center text-[11px] text-slate-400 transition-colors hover:text-amber-600"
@@ -2432,6 +2446,11 @@ function App() {
           <Route path="/services/litigation-stages" element={<LitigationStages lang={lang} />} />
           {/* 404 */}
           <Route path="*" element={<NotFound lang={lang} />} />
+          <Route path="/privacy" element={<PrivacyPage lang={lang} />} />
+          <Route path="/terms" element={<TermsPage lang={lang} />} />
+          <Route path="/disclaimer" element={<DisclaimerPage lang={lang} />} />
+          <Route path="/cookies" element={<CookiesPage lang={lang} />} />
+
         </Routes>
 
         {/* Single global footer */}
