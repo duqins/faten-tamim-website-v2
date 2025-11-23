@@ -62,10 +62,14 @@ const IMG = {
     banking: "/banking.jpg",
     medical: "/medical.jpg",
   },
-  team: {
+// in the IMG object up top
+team: {
   faten: "/faten-alsulebi.jpg",
   mohamed: "/mohamed-eltobgy.jpg",
+  sarah: "/sarah-almansoori.jpg",   // ← add
+  hassan: "/hassan-alnuaimi.jpg",   // ← add
 },
+
 
 };
 const EMAILJS_SERVICE_ID = "service_cusdo1k";
@@ -1110,7 +1114,7 @@ const GalleryStrip = () => {
 };
 
 /* ===========================
-   TEAM (3 cards, RTL-ready)
+   TEAM (4 cards, RTL-ready)
 =========================== */
 const Team = ({ lang }) => {
   const isAR = lang === "ar";
@@ -1119,14 +1123,38 @@ const Team = ({ lang }) => {
     {
       name: isAR ? "د. فاتن تميم الصليبي" : "Dr. Faten Tamim Alsulebi",
       role: isAR ? "محامية ومديرة المكتب" : "Attorney & Managing Partner",
+      desc: isAR
+        ? "تتولى الإشراف على الاستراتيجية العامة للمكتب وتمثيل القضايا أمام المحاكم بمختلف درجاتها، مع خبرة واسعة في القضايا الأسرية والتجارية."
+        : "Oversees firm strategy and advocates across all court stages, with deep experience in family and commercial matters.",
       img: IMG.team.faten,
-      objectPos: "50% 22%", // keeps forehead & shoulders in frame
+      objectPos: "50% 22%",
     },
     {
       name: isAR ? "محمد أحمد الطوبجي" : "Mohamed Ahmed Eltobgy",
       role: isAR ? "مستشار قانوني" : "Legal Consultant",
+      desc: isAR
+        ? "متخصص في صياغة المذكرات ومرافعات الدرجة الأولى والاستئناف، وبناء النظريات القانونية القائمة على الوقائع."
+        : "Specializes in pleadings, first-instance and appellate work, building fact-driven legal theories.",
       img: IMG.team.mohamed,
-      objectPos: "50% 28%", // slight top focus
+      objectPos: "50% 28%",
+    },
+    {
+      name: isAR ? "سارة المنصوري" : "Sarah Al Mansoori",
+      role: isAR ? "مستشارة شركات وعقود" : "Corporate & Contracts Counsel",
+      desc: isAR
+        ? "تقدّم استشارات تأسيس الشركات، الحوكمة، وصياغة العقود التجارية بما يتوافق مع الأطر التنظيمية داخل الدولة والمناطق الحرة."
+        : "Advises on incorporations, governance, and commercial contracts aligned with onshore and free-zone frameworks.",
+      img: IMG.team.sarah,
+      objectPos: "50% 35%",
+    },
+    {
+      name: isAR ? "حسن النعيمي" : "Hassan Al Nuaimi",
+      role: isAR ? "مختص التقاضي والتنفيذ" : "Litigation & Enforcement Specialist",
+      desc: isAR
+        ? "يدير ملفات التنفيذ وإجراءات الأوامر الوقتية وتتبّع الأصول، مع تركيز على الحلول العملية وتسريع النتائج."
+        : "Handles enforcement files, precautionary measures, and asset tracing with a focus on practical, swift outcomes.",
+      img: IMG.team.hassan,
+      objectPos: "50% 30%",
     },
   ];
 
@@ -1139,14 +1167,14 @@ const Team = ({ lang }) => {
           icon={Building2}
         />
 
-        <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
+        <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {people.map((p) => (
             <div
               key={p.name}
               className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:shadow-md"
             >
               {/* Image */}
-              <div className="relative aspect-[4/5] sm:aspect-[3/4] overflow-hidden bg-gradient-to-b from-slate-100 to-slate-200 rounded-b-none">
+              <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-b from-slate-100 to-slate-200">
                 <Img
                   src={p.img}
                   alt={p.name}
@@ -1162,6 +1190,7 @@ const Team = ({ lang }) => {
               <div className="p-5 text-center">
                 <h4 className="font-serif text-lg text-slate-900">{p.name}</h4>
                 <p className="mt-1 text-sm text-slate-600">{p.role}</p>
+                <p className="mt-3 text-sm leading-6 text-slate-700">{p.desc}</p>
               </div>
             </div>
           ))}
@@ -1170,6 +1199,7 @@ const Team = ({ lang }) => {
     </section>
   );
 };
+
 
 
 
