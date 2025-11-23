@@ -66,9 +66,10 @@ const IMG = {
 team: {
   faten: "/faten-alsulebi.jpg",
   mohamed: "/mohamed-eltobgy.jpg",
-  sarah: "/sarah-almansoori.jpg",   // ← add
-  hassan: "/hassan-alnuaimi.jpg",   // ← add
+  zahra: "/zahra-sabrina-meddah.jpg",
+  rafik: "/mohamed-rafik.jpg",
 },
+
 
 
 };
@@ -1200,7 +1201,8 @@ His work also covers contract drafting and review, legal opinions, negotiation o
       desc: isAR
         ? `قاضية سابقة ومحامية بخبرة واسعة تتجاوز 15 عامًا في مجالات التقاضي وتسوية النزاعات، مع تركيز خاص على القضايا التجارية، الاستثمارية، وقانون الشركات والنزاعات العقارية والمطالبات المالية إضافة إلى القضايا المدنية والعمالية والأحوال الشخصية والجزائية. أمتلك سجلًا مهنيًا متميزًا في إدارة الملفات المعقدة، وصياغة المذكرات القانونية، وتمثيل العملاء في مختلف المنازعات. أقدّم استشارات قانونية دقيقة تستند إلى خبرة قضائية عميقة وفهم شامل للتشريعات المحلية والدولية وصياغة العقود والمذكرات القانونية، مع التزام كامل بأعلى معايير المهنية والسرية.`
         : `Former judge and attorney with over 15 years of extensive experience in litigation and dispute resolution, with a strong focus on commercial and investment disputes, corporate law, real-estate conflicts, financial claims, as well as civil, labour, family, and criminal cases. Proven track record in managing complex legal matters, drafting contracts, legal submissions, and pleadings, and representing clients effectively before judicial authorities. Provides precise and strategic legal advice grounded in deep judicial experience and a comprehensive understanding of local and international laws, with a steadfast commitment to the highest standards of professionalism and confidentiality.`,
-      img: IMG.team.sarah,
+      img: IMG.team.zahra,
+
       objectPos: "50% 35%",
     },
     {
@@ -1209,7 +1211,7 @@ His work also covers contract drafting and review, legal opinions, negotiation o
       desc: isAR
         ? `مستشار قانوني ثنائي اللغة (العربية والإنجليزية) يتمتع بخبرة تتجاوز ثماني سنوات في العمل القانوني داخل دولة الإمارات العربية المتحدة ومصر، لدى كبرى مكاتب المحاماة. يمتلك خبرة واسعة في التقاضي، صياغة العقود، الامتثال التنظيمي، إدارة المخاطر، وتسوية النزاعات، إضافة إلى معرفة متعمقة بأنظمة القضاء في الإمارات، بما في ذلك محاكم دبي وأبوظبي والمحاكم الاتحادية. يتميز محمد رفيق بمهارات عالية في صياغة اللوائح والمذكرات القانونية في مختلف الدعاوى المدنية والجزائية والتجارية والعمالية والأحوال الشخصية، مع سجل نجاح بلغ 90% في القضايا التي تولّى الترافع فيها. كما يمتلك خبرة متميزة في قوانين العقارات والامتثال لجهات مثل RERA وDLD، إلى جانب براعة في التفاوض وإعداد التسويات عالية المخاطر لصالح العملاء. قدم أكثر من 200 استشارة قانونية متخصصة عبر منصات احترافية، وشارك في إعداد ونشر مقالات قانونية مؤثرة ساهمت في رفع تصنيف المنصات القانونية على محركات البحث. يحمل درجة الماجستير في القانون العام والجنائي وعدة دبلومات وشهادات دولية في مجالات القانون والتكنولوجيا القانونية، مما يعزز قدرته على تقديم حلول قانونية مبتكرة وفعّالة. يؤمن بأن العمل القانوني يقوم على الدقة، النزاهة، وحماية مصالح العملاء وفق أعلى المعايير المهنية.`
         : `Experienced and results-driven Legal Counsel with 8+ years of professional practice across the UAE and Egypt, specializing in corporate and commercial law, regulatory compliance, real estate (RERA/DLD), dispute resolution, and contract negotiation. Provides strategic legal guidance to support business growth, reduce risk, and ensure full compliance with local and international regulations. Has represented clients before major UAE judicial authorities, managed complex litigation portfolios, and successfully negotiated high-value settlements. Experience spans drafting and reviewing contracts, leading case strategies, advising on cross-border transactions, and supporting corporate governance frameworks. Beyond legal practice, authored high-impact legal content, delivered 200+ consultations, and achieved a 90% litigation success rate while leading high-performing teams. Holds an LL.M and LL.B from Alexandria University with certifications in commercial law, negotiation, legal tech, and digital transformation. Fluent in Arabic and English with a detail-oriented, analytical approach dedicated to clear, practical, business-aligned legal solutions.`,
-      img: IMG.team.hassan,
+img: IMG.team.rafik,
       objectPos: "50% 30%",
     },
   ];
