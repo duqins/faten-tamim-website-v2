@@ -175,35 +175,168 @@ const LegalShell = ({ title, lang, children }) => (
 
 const PrivacyPage = ({ lang }) => (
   <LegalShell title={lang === "ar" ? "سياسة الخصوصية" : "Privacy Policy"} lang={lang}>
-    <h2>{lang === "ar" ? "المعلومات التي نجمعها" : "Information We Collect"}</h2>
-    <p>{lang === "ar" ? "ضع هنا تفاصيل السياسة..." : "Place your policy details here..."}</p>
+    <p>{lang === "ar"
+      ? "نحترم خصوصيتك ونلتزم بحماية بياناتك الشخصية. توضح هذه السياسة كيفية جمع معلوماتك واستخدامها ومشاركتها والاحتفاظ بها عند استخدامك لموقعنا أو تواصلك معنا."
+      : "We respect your privacy and are committed to protecting your personal data. This policy explains how we collect, use, share and retain information when you use our website or contact us."}
+    </p>
+
+    <h2>{lang === "ar" ? "البيانات التي نجمعها" : "Data We Collect"}</h2>
+    <ul>
+      <li>{lang === "ar" ? "بيانات التعريف: الاسم، البريد الإلكتروني، الهاتف." : "Identity & contact data: name, email, phone."}</li>
+      <li>{lang === "ar" ? "تفاصيل القضية والرسائل التي ترسلها عبر النموذج." : "Matter details and any messages you send through forms."}</li>
+      <li>{lang === "ar" ? "بيانات تقنية: عنوان IP، نوع المتصفح، ملفات تعريف الارتباط (كوكيز)." : "Technical data: IP address, browser type, and cookies."}</li>
+    </ul>
+
+    <h2>{lang === "ar" ? "كيف نستخدم بياناتك" : "How We Use Your Data"}</h2>
+    <ul>
+      <li>{lang === "ar" ? "للرد على استفساراتك وتقديم الاستشارة الأولية." : "To respond to enquiries and provide an initial consultation."}</li>
+      <li>{lang === "ar" ? "لإدارة علاقتنا معك والامتثال للمتطلبات القانونية." : "To manage our relationship and comply with legal requirements."}</li>
+      <li>{lang === "ar" ? "لتحسين موقعنا وخدماتنا." : "To improve our website and services."}</li>
+    </ul>
+
+    <h2>{lang === "ar" ? "الأساس القانوني للمعالجة" : "Legal Bases"}</h2>
+    <p>{lang === "ar"
+      ? "نستند إلى موافقتك، أو تنفيذ عقد/اتفاق، أو المصالح المشروعة، أو الالتزام القانوني."
+      : "We rely on consent, performance of a contract, legitimate interests, or legal obligation."}
+    </p>
+
+    <h2>{lang === "ar" ? "مشاركة البيانات" : "Sharing"}</h2>
+    <p>{lang === "ar"
+      ? "قد نشارك البيانات مع مزودي خدمات موثوقين (مثل مزود الاستضافة أو أدوات البريد) وبما يقتضيه القانون أو لحماية حقوقنا. لا نبيع بياناتك."
+      : "We may share data with trusted service providers (e.g., hosting or email tools), where required by law, or to protect our rights. We do not sell your data."}
+    </p>
+
+    <h2>{lang === "ar" ? "النقل الدولي" : "International Transfers"}</h2>
+    <p>{lang === "ar"
+      ? "قد تتم معالجة البيانات خارج بلدك وفق ضمانات مناسبة."
+      : "Your data may be processed outside your country with appropriate safeguards in place."}
+    </p>
+
+    <h2>{lang === "ar" ? "الاحتفاظ بالبيانات" : "Retention"}</h2>
+    <p>{lang === "ar"
+      ? "نحتفظ بالبيانات فقط للمدة اللازمة للأغراض المذكورة أو وفق ما يتطلبه القانون."
+      : "We retain data only as long as needed for the purposes above or as required by law."}
+    </p>
+
+    <h2>{lang === "ar" ? "حقوقك" : "Your Rights"}</h2>
+    <ul>
+      <li>{lang === "ar" ? "الوصول والتصحيح والحذف حيثما ينطبق." : "Access, correction, deletion where applicable."}</li>
+      <li>{lang === "ar" ? "الاعتراض أو تقييد المعالجة." : "Object to or restrict processing."}</li>
+      <li>{lang === "ar" ? "سحب الموافقة في أي وقت." : "Withdraw consent at any time."}</li>
+    </ul>
+
+    <h2>{lang === "ar" ? "الأمن" : "Security"}</h2>
+    <p>{lang === "ar"
+      ? "نطبّق تدابير تقنية وتنظيمية لحماية البيانات، لكن لا يوجد نظام آمن تمامًا."
+      : "We apply technical and organizational measures to protect data, but no system is 100% secure."}
+    </p>
+
+    <h2>{lang === "ar" ? "الأطفال" : "Children"}</h2>
+    <p>{lang === "ar"
+      ? "خدماتنا ليست موجهة للأطفال دون 18 عامًا."
+      : "Our services are not directed to children under 18."}
+    </p>
+
+    <h2>{lang === "ar" ? "التحديثات" : "Updates"}</h2>
+    <p>{lang === "ar"
+      ? "قد نحدّث هذه السياسة من وقت لآخر. يسري الإصدار المنشور على الموقع."
+      : "We may update this policy from time to time. The posted version on the site is the current one."}
+    </p>
+
     <h2>{lang === "ar" ? "الاتصال بنا" : "Contact Us"}</h2>
-    <p>{lang === "ar" ? "للاستفسارات: " : "For queries: "}
+    <p>
+      {lang === "ar" ? "للأسئلة المتعلقة بالخصوصية: " : "For privacy enquiries: "}
       <a href={`mailto:${BRAND.email}`}>{BRAND.email}</a>
     </p>
   </LegalShell>
 );
 
+
 const TermsPage = ({ lang }) => (
   <LegalShell title={lang === "ar" ? "الشروط والأحكام" : "Terms of Use"} lang={lang}>
     <h2>{lang === "ar" ? "القبول" : "Acceptance"}</h2>
-    <p>...</p>
-    <h2>{lang === "ar" ? "المسؤولية" : "Liability"}</h2>
-    <p>...</p>
+    <p>{lang === "ar"
+      ? "باستخدامك لهذا الموقع، فأنت توافق على هذه الشروط. إن لم توافق، يُرجى عدم استخدام الموقع."
+      : "By using this website, you agree to these Terms. If you do not agree, please do not use the site."}
+    </p>
+
+    <h2>{lang === "ar" ? "لا تُعدّ نصيحة قانونية" : "No Legal Advice"}</h2>
+    <p>{lang === "ar"
+      ? "المحتوى لأغراض المعلومات العامة فقط وليس استشارة قانونية. تواصل معنا للحصول على استشارة."
+      : "Content is for general information only and not legal advice. Contact us for tailored advice."}
+    </p>
+
+    <h2>{lang === "ar" ? "عدم إنشاء علاقة محامٍ-موكل" : "No Attorney–Client Relationship"}</h2>
+    <p>{lang === "ar"
+      ? "لا ينشئ استخدام الموقع علاقة محامٍ–موكل. تتشكل العلاقة فقط بعد قبول كتابي منا."
+      : "Using the site does not create an attorney–client relationship. That forms only after our written acceptance."}
+    </p>
+
+    <h2>{lang === "ar" ? "الاستخدام المقبول" : "Acceptable Use"}</h2>
+    <ul>
+      <li>{lang === "ar" ? "عدم إساءة استخدام النماذج أو محاولة اختراق الموقع." : "Do not misuse forms or attempt to compromise the site."}</li>
+      <li>{lang === "ar" ? "عدم انتهاك حقوق الملكية الفكرية." : "Do not infringe intellectual property rights."}</li>
+    </ul>
+
+    <h2>{lang === "ar" ? "الملكية الفكرية" : "Intellectual Property"}</h2>
+    <p>{lang === "ar"
+      ? "جميع العلامات والشعارات والمحتوى مملوكة لنا أو مرخصة لنا. لا يجوز النسخ أو إعادة النشر دون موافقة."
+      : "All trademarks, logos and content are owned by or licensed to us. Do not copy or republish without permission."}
+    </p>
+
+    <h2>{lang === "ar" ? "روابط خارجية" : "Third-Party Links"}</h2>
+    <p>{lang === "ar"
+      ? "قد يتضمن الموقع روابط لمواقع خارجية. لا نتحمل مسؤولية محتواها."
+      : "The site may include links to external sites. We are not responsible for their content."}
+    </p>
+
+    <h2>{lang === "ar" ? "إخلاء المسؤولية" : "Disclaimers"}</h2>
+    <p>{lang === "ar"
+      ? "يتم توفير الموقع كما هو، دون ضمانات من أي نوع."
+      : "The site is provided “as is” without warranties of any kind."}
+    </p>
+
+    <h2>{lang === "ar" ? "تحديد المسؤولية" : "Limitation of Liability"}</h2>
+    <p>{lang === "ar"
+      ? "لا نتحمل المسؤولية عن أي أضرار غير مباشرة أو تبعية ناشئة عن استخدام الموقع."
+      : "We are not liable for any indirect or consequential damages arising from use of the site."}
+    </p>
+
+    <h2>{lang === "ar" ? "القانون المطبق والاختصاص" : "Governing Law & Jurisdiction"}</h2>
+    <p>{lang === "ar"
+      ? "تخضع هذه الشروط لقوانين إمارة أبوظبي والقوانين الاتحادية لدولة الإمارات العربية المتحدة، ويختص القضاء في أبوظبي."
+      : "These Terms are governed by the laws of Abu Dhabi and the UAE federal laws, with courts of Abu Dhabi having jurisdiction."}
+    </p>
+
+    <h2>{lang === "ar" ? "التغييرات" : "Changes"}</h2>
+    <p>{lang === "ar"
+      ? "قد نقوم بتحديث الشروط. استمرارك في استخدام الموقع يعني موافقتك على النسخة المحدّثة."
+      : "We may update these Terms. Continued use means you accept the updated version."}
+    </p>
   </LegalShell>
 );
+
 
 const DisclaimerPage = ({ lang }) => (
   <LegalShell title={lang === "ar" ? "إخلاء المسؤولية" : "Disclaimer"} lang={lang}>
-    <p>...</p>
+    <p>{lang === "ar"
+      ? "المعلومات الواردة في هذا الموقع عامة وقد لا تعكس أحدث التطورات القانونية. لا تتحمل المؤسسة أي مسؤولية عن الاعتماد على أي محتوى منشور هنا. للحصول على نصيحة قانونية مخصصة، يُرجى التواصل معنا."
+      : "The information on this website is general and may not reflect the latest legal developments. We accept no responsibility for reliance on any content published here. For tailored legal advice, please contact us."}
+    </p>
   </LegalShell>
 );
 
+
 const CookiesPage = ({ lang }) => (
   <LegalShell title={lang === "ar" ? "سياسة الكوكيز" : "Cookie Policy"} lang={lang}>
-    <p>...</p>
+    <p>
+      {lang === "ar"
+        ? "لا يستخدم هذا الموقع أي ملفات تعريف الارتباط (كوكيز) أو أدوات تتبع. نحتفظ فقط بالمعلومات التي تقدمها طوعاً عبر نموذج الاتصال لتقديم الخدمة المطلوبة."
+        : "This website does not use cookies or tracking tools. We only retain information you voluntarily provide through the contact form to deliver the requested service."}
+    </p>
   </LegalShell>
 );
+
 
 
 
@@ -1295,13 +1428,14 @@ const PersonPage = ({ lang }) => {
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-3 items-start gap-10">
           {/* LEFT: Image */}
-          <div className="overflow-hidden rounded-3xl shadow-lg md:col-span-1">
-            <Img
-              src={p.img}
-              alt={name}
-              className="h-[420px] w-full object-cover object-center"
-            />
-          </div>
+          <div className="overflow-hidden rounded-3xl shadow-lg md:col-span-1 bg-white">
+  <Img
+    src={p.img}
+    alt={name}
+    className="h-[420px] w-full object-contain"
+  />
+</div>
+
 
           {/* RIGHT: Info */}
           <div className="md:col-span-2">
