@@ -837,7 +837,7 @@ const Marquee = ({ lang }) => (
 const AboutTeam = ({ lang }) => {
   const isAR = lang === "ar";
 
-  const people = [/* exact same array as above */];
+  const people = PEOPLE(isAR);
 
   return (
     <section className="mt-12" dir={isAR ? "rtl" : "ltr"}>
@@ -1155,6 +1155,61 @@ const GalleryStrip = () => {
   );
 };
 
+//constant team
+// ===========================
+// Shared Team Data
+// ===========================
+const PEOPLE = (isAR) => [
+  {
+    name: isAR ? "د. فاتن تميم الصليبي" : "Dr. Faten Tamim Alsulebi",
+    role: isAR ? "محامية ومديرة المكتب" : "Attorney & Managing Partner",
+    desc: isAR
+      ? `أستاذة جامعية في جامعة أبوظبي في مجال القانون المدني، وأول امرأة إماراتية تنال درجة الدكتوراه في قانون الرياضة ضمن فروع القانون المدني. ترتكز خبرتها الأكاديمية والعملية على "تنظيم عقود رعاية الرياضة" — موضوع أطروحتها للدكتوراه (دراسة مقارنة بين القانون الإماراتي والمصري) — وقدّمت محاضرات متخصصة في قانون الرياضة وصياغة ومراجعة عقود الرعاية والوكالات.
+
+خلال مسيرتها، شاركت في برامج تدريب متقدمة في سويسرا متصلة بتطبيقات لوائح قانون الرياضة على اللاعبين، وزارت الهيئة الدولية للتحكيم (جنيف) ضمن برنامج مدعوم من الجامعة الأمريكية في دبي. عمليًا، عملت في شركة أبوظبي للتوزيع (ADDC) في إدارة التحقيقات مع الموظفين المخالفين للوائح، وأنشأت فريقًا تطوعيًا ناجحًا انضم إليه معظم الموظفين، كما أسست نشرة قانونية داخلية تصدر شهريًا لتغطية أحدث المستجدات التشريعية. قامت كذلك بمتابعة شكاوى المخالفات، والعمل على عقود واتفاقيات المياه والكهرباء، وتنظيم العلاقات مع المستثمرين بصفة مستشار قانوني.
+
+قدّمت محاضرات في الجريمة والقانون المدني في جهات متعددة، وأسهمت في دعم الجوانب الأسرية لعدد من موظفي المؤسسة بهدف تحسين سلامتهم النفسية، انطلاقًا من اهتمامها بتطوير السلوك الإنساني. وتشمل خبرتها صياغة ومراجعة العقود التجارية والرياضية (ومنها أعمال مرتبطة بنادي العين)، وإعداد سياسات الامتثال والحوكمة والتفاوض على التسويات بما يضمن حماية المصالح وتحقيق نتائج عملية تراعي أعلى معايير المهنية والسرية.`
+      : `University educator in civil law at Abu Dhabi University and the first Emirati woman to earn a PhD in sports law within the civil-law discipline. Her doctoral research — “Regulating Contracts for Sports Sponsorship (A Comparative Study between UAE and Egyptian Law)” — anchors a practice that blends rigorous scholarship with hands-on advisory on drafting and reviewing sponsorship, agency, and commercial agreements.
+
+She has undertaken advanced training in Switzerland related to the application of sports-law regulations to professional players and visited the International Court of Arbitration in Geneva through a program sponsored by the American University in Dubai. In practice, she served at Abu Dhabi Distribution Company (ADDC) within the investigations department, led inquiries into employee violations, founded a successful corporate volunteer program, and launched a monthly internal legal bulletin covering regulatory updates. She also handled customer-violation complaints, negotiated and reviewed water and electricity agreements, and advised on investor relations as legal counsel.
+
+Beyond academia and corporate advisory, she has delivered lectures on criminal and civil law at multiple venues and provided family-law support initiatives for staff well-being, reflecting a broader interest in behavioral development. Her portfolio includes commercial and sports-law contracting (including work with Al Ain Football Club), compliance and governance policies, and high-stakes negotiations — consistently prioritizing client protection, clear strategy, and professional confidentiality.`,
+    img: IMG.team.faten,
+    objectPos: "50% 22%",
+  },
+  {
+    name: isAR ? "محمد أحمد الطوبجي" : "Mohamed Ahmed Eltobgy",
+    role: isAR ? "مستشار قانوني" : "Legal Consultant",
+    desc: isAR
+      ? `مستشار قانوني يركّز على التقاضي وصياغة المذكرات واللوائح عبر الدعاوى المدنية والتجارية والجزائية والعمالية والأحوال الشخصية. يمتاز بقدرة عالية على تحليل الوقائع وبناء نظرية قانونية متماسكة، وإدارة مسار الدعوى من القيد حتى التنفيذ، بما يشمل طلبات الإثبات وندب الخبراء والمرافعة الشفوية وإعداد الطعون في الاستئناف والتمييز عند الجدوى.
+
+خبرته العملية تشمل مراجعة وصياغة العقود التجارية، إعداد مذكرات الرأي القانوني، التفاوض على التسويات، وإدارة المخاطر والامتثال داخل الشركات. يتعامل بثنائية لغوية (العربية/الإنجليزية) ويُحسن التنسيق مع الفرق الاستشارية والخبراء الفنيين، مع الالتزام بمعايير السرية والمهنية، وتقديم حلول عملية تركّز على النتائج وتحسين موقف العميل الإجرائي والموضوعي على حد سواء.`
+      : `Legal consultant focused on litigation and written advocacy across civil, commercial, criminal, labour, and personal-status matters. He builds clear, fact-driven case theories; manages end-to-end proceedings from filing through enforcement; and handles evidence applications, expert appointments, oral pleadings, and appellate strategy (where viable).
+
+His work also covers contract drafting and review, legal opinions, negotiation of settlements, and corporate risk and compliance support. Bilingual (Arabic/English), he collaborates effectively with expert witnesses and advisory teams, maintaining strict confidentiality and delivering pragmatic, results-oriented solutions that strengthen both procedural posture and substantive outcomes.`,
+    img: IMG.team.mohamed,
+    objectPos: "50% 28%",
+  },
+  {
+    name: isAR ? "زهراء صبرينة مداح" : "Zahra Sabrina Meddah",
+    role: isAR ? "محامية ومستشارة قانونية" : "Attorney & Legal Counsel",
+    desc: isAR
+      ? `قاضية سابقة ومحامية بخبرة واسعة تتجاوز 15 عامًا في مجالات التقاضي وتسوية النزاعات، مع تركيز خاص على القضايا التجارية، الاستثمارية، وقانون الشركات والنزاعات العقارية والمطالبات المالية إضافة إلى القضايا المدنية والعمالية والأحوال الشخصية والجزائية. أمتلك سجلًا مهنيًا متميزًا في إدارة الملفات المعقدة، وصياغة المذكرات القانونية، وتمثيل العملاء في مختلف المنازعات. أقدّم استشارات قانونية دقيقة تستند إلى خبرة قضائية عميقة وفهم شامل للتشريعات المحلية والدولية وصياغة العقود والمذكرات القانونية، مع التزام كامل بأعلى معايير المهنية والسرية.`
+      : `Former judge and attorney with over 15 years of extensive experience in litigation and dispute resolution, with a strong focus on commercial and investment disputes, corporate law, real-estate conflicts, financial claims, as well as civil, labour, family, and criminal cases. Proven track record in managing complex legal matters, drafting contracts, legal submissions, and pleadings, and representing clients effectively before judicial authorities. Provides precise and strategic legal advice grounded in deep judicial experience and a comprehensive understanding of local and international laws, with a steadfast commitment to the highest standards of professionalism and confidentiality.`,
+    img: IMG.team.zahra,
+    objectPos: "50% 35%",
+  },
+  {
+    name: isAR ? "محمد رفيق محمد أحمد إبراهيم" : "Mohamed Rafik Mohamed Ahmed Ibrahim",
+    role: isAR ? "مستشار قانوني" : "Legal Counsel",
+    desc: isAR
+      ? `مستشار قانوني ثنائي اللغة (العربية والإنجليزية) يتمتع بخبرة تتجاوز ثماني سنوات في العمل القانوني داخل دولة الإمارات العربية المتحدة ومصر، لدى كبرى مكاتب المحاماة. يمتلك خبرة واسعة في التقاضي، صياغة العقود، الامتثال التنظيمي، إدارة المخاطر، وتسوية النزاعات، إضافة إلى معرفة متعمقة بأنظمة القضاء في الإمارات، بما في ذلك محاكم دبي وأبوظبي والمحاكم الاتحادية. يتميز محمد رفيق بمهارات عالية في صياغة اللوائح والمذكرات القانونية في مختلف الدعاوى المدنية والجزائية والتجارية والعمالية والأحوال الشخصية، مع سجل نجاح بلغ 90% في القضايا التي تولّى الترافع فيها. كما يمتلك خبرة متميزة في قوانين العقارات والامتثال لجهات مثل RERA وDLD، إلى جانب براعة في التفاوض وإعداد التسويات عالية المخاطر لصالح العملاء. قدم أكثر من 200 استشارة قانونية متخصصة عبر منصات احترافية، وشارك في إعداد ونشر مقالات قانونية مؤثرة ساهمت في رفع تصنيف المنصات القانونية على محركات البحث. يحمل درجة الماجستير في القانون العام والجنائي وعدة دبلومات وشهادات دولية في مجالات القانون والتكنولوجيا القانونية، مما يعزز قدرته على تقديم حلول قانونية مبتكرة وفعّالة. يؤمن بأن العمل القانوني يقوم على الدقة، النزاهة، وحماية مصالح العملاء وفق أعلى المعايير المهنية.`
+      : `Experienced and results-driven Legal Counsel with 8+ years of professional practice across the UAE and Egypt, specializing in corporate and commercial law, regulatory compliance, real estate (RERA/DLD), dispute resolution, and contract negotiation. Provides strategic legal guidance to support business growth, reduce risk, and ensure full compliance with local and international regulations. Has represented clients before major UAE judicial authorities, managed complex litigation portfolios, and successfully negotiated high-value settlements. Experience spans drafting and reviewing contracts, leading case strategies, advising on cross-border transactions, and supporting corporate governance frameworks. Beyond legal practice, authored high-impact legal content, delivered 200+ consultations, and achieved a 90% litigation success rate while leading high-performing teams. Holds an LL.M and LL.B from Alexandria University with certifications in commercial law, negotiation, legal tech, and digital transformation. Fluent in Arabic and English with a detail-oriented, analytical approach dedicated to clear, practical, business-aligned legal solutions.`,
+    img: IMG.team.rafik,
+    objectPos: "50% 30%",
+  },
+];
+
 /* ===========================
    TEAM (4 cards, RTL-ready)
 =========================== */
@@ -1163,58 +1218,7 @@ const GalleryStrip = () => {
 =========================== */
 const Team = ({ lang }) => {
   const isAR = lang === "ar";
-
-  const people = [
-    {
-      name: isAR ? "د. فاتن تميم الصليبي" : "Dr. Faten Tamim Alsulebi",
-      role: isAR ? "محامية ومديرة المكتب" : "Attorney & Managing Partner",
-      desc: isAR
-        ? `أستاذة جامعية في جامعة أبوظبي في مجال القانون المدني، وأول امرأة إماراتية تنال درجة الدكتوراه في قانون الرياضة ضمن فروع القانون المدني. ترتكز خبرتها الأكاديمية والعملية على "تنظيم عقود رعاية الرياضة" — موضوع أطروحتها للدكتوراه (دراسة مقارنة بين القانون الإماراتي والمصري) — وقدّمت محاضرات متخصصة في قانون الرياضة وصياغة ومراجعة عقود الرعاية والوكالات.
-
-خلال مسيرتها، شاركت في برامج تدريب متقدمة في سويسرا متصلة بتطبيقات لوائح قانون الرياضة على اللاعبين، وزارت الهيئة الدولية للتحكيم (جنيف) ضمن برنامج مدعوم من الجامعة الأمريكية في دبي. عمليًا، عملت في شركة أبوظبي للتوزيع (ADDC) في إدارة التحقيقات مع الموظفين المخالفين للوائح، وأنشأت فريقًا تطوعيًا ناجحًا انضم إليه معظم الموظفين، كما أسست نشرة قانونية داخلية تصدر شهريًا لتغطية أحدث المستجدات التشريعية. قامت كذلك بمتابعة شكاوى المخالفات، والعمل على عقود واتفاقيات المياه والكهرباء، وتنظيم العلاقات مع المستثمرين بصفة مستشار قانوني.
-
-قدّمت محاضرات في الجريمة والقانون المدني في جهات متعددة، وأسهمت في دعم الجوانب الأسرية لعدد من موظفي المؤسسة بهدف تحسين سلامتهم النفسية، انطلاقًا من اهتمامها بتطوير السلوك الإنساني. وتشمل خبرتها صياغة ومراجعة العقود التجارية والرياضية (ومنها أعمال مرتبطة بنادي العين)، وإعداد سياسات الامتثال والحوكمة والتفاوض على التسويات بما يضمن حماية المصالح وتحقيق نتائج عملية تراعي أعلى معايير المهنية والسرية.`
-        : `University educator in civil law at Abu Dhabi University and the first Emirati woman to earn a PhD in sports law within the civil-law discipline. Her doctoral research — “Regulating Contracts for Sports Sponsorship (A Comparative Study between UAE and Egyptian Law)” — anchors a practice that blends rigorous scholarship with hands-on advisory on drafting and reviewing sponsorship, agency, and commercial agreements.
-
-She has undertaken advanced training in Switzerland related to the application of sports-law regulations to professional players and visited the International Court of Arbitration in Geneva through a program sponsored by the American University in Dubai. In practice, she served at Abu Dhabi Distribution Company (ADDC) within the investigations department, led inquiries into employee violations, founded a successful corporate volunteer program, and launched a monthly internal legal bulletin covering regulatory updates. She also handled customer-violation complaints, negotiated and reviewed water and electricity agreements, and advised on investor relations as legal counsel.
-
-Beyond academia and corporate advisory, she has delivered lectures on criminal and civil law at multiple venues and provided family-law support initiatives for staff well-being, reflecting a broader interest in behavioral development. Her portfolio includes commercial and sports-law contracting (including work with Al Ain Football Club), compliance and governance policies, and high-stakes negotiations — consistently prioritizing client protection, clear strategy, and professional confidentiality.`,
-      img: IMG.team.faten,
-      objectPos: "50% 22%",
-    },
-    {
-      name: isAR ? "محمد أحمد الطوبجي" : "Mohamed Ahmed Eltobgy",
-      role: isAR ? "مستشار قانوني" : "Legal Consultant",
-      desc: isAR
-        ? `مستشار قانوني يركّز على التقاضي وصياغة المذكرات واللوائح عبر الدعاوى المدنية والتجارية والجزائية والعمالية والأحوال الشخصية. يمتاز بقدرة عالية على تحليل الوقائع وبناء نظرية قانونية متماسكة، وإدارة مسار الدعوى من القيد حتى التنفيذ، بما يشمل طلبات الإثبات وندب الخبراء والمرافعة الشفوية وإعداد الطعون في الاستئناف والتمييز عند الجدوى.
-
-خبرته العملية تشمل مراجعة وصياغة العقود التجارية، إعداد مذكرات الرأي القانوني، التفاوض على التسويات، وإدارة المخاطر والامتثال داخل الشركات. يتعامل بثنائية لغوية (العربية/الإنجليزية) ويُحسن التنسيق مع الفرق الاستشارية والخبراء الفنيين، مع الالتزام بمعايير السرية والمهنية، وتقديم حلول عملية تركّز على النتائج وتحسين موقف العميل الإجرائي والموضوعي على حد سواء.`
-        : `Legal consultant focused on litigation and written advocacy across civil, commercial, criminal, labour, and personal-status matters. He builds clear, fact-driven case theories; manages end-to-end proceedings from filing through enforcement; and handles evidence applications, expert appointments, oral pleadings, and appellate strategy (where viable).
-
-His work also covers contract drafting and review, legal opinions, negotiation of settlements, and corporate risk and compliance support. Bilingual (Arabic/English), he collaborates effectively with expert witnesses and advisory teams, maintaining strict confidentiality and delivering pragmatic, results-oriented solutions that strengthen both procedural posture and substantive outcomes.`,
-      img: IMG.team.mohamed,
-      objectPos: "50% 28%",
-    },
-    {
-      name: isAR ? "زهراء صبرينة مداح" : "Zahra Sabrina Meddah",
-      role: isAR ? "محامية ومستشارة قانونية" : "Attorney & Legal Counsel",
-      desc: isAR
-        ? `قاضية سابقة ومحامية بخبرة واسعة تتجاوز 15 عامًا في مجالات التقاضي وتسوية النزاعات، مع تركيز خاص على القضايا التجارية، الاستثمارية، وقانون الشركات والنزاعات العقارية والمطالبات المالية إضافة إلى القضايا المدنية والعمالية والأحوال الشخصية والجزائية. أمتلك سجلًا مهنيًا متميزًا في إدارة الملفات المعقدة، وصياغة المذكرات القانونية، وتمثيل العملاء في مختلف المنازعات. أقدّم استشارات قانونية دقيقة تستند إلى خبرة قضائية عميقة وفهم شامل للتشريعات المحلية والدولية وصياغة العقود والمذكرات القانونية، مع التزام كامل بأعلى معايير المهنية والسرية.`
-        : `Former judge and attorney with over 15 years of extensive experience in litigation and dispute resolution, with a strong focus on commercial and investment disputes, corporate law, real-estate conflicts, financial claims, as well as civil, labour, family, and criminal cases. Proven track record in managing complex legal matters, drafting contracts, legal submissions, and pleadings, and representing clients effectively before judicial authorities. Provides precise and strategic legal advice grounded in deep judicial experience and a comprehensive understanding of local and international laws, with a steadfast commitment to the highest standards of professionalism and confidentiality.`,
-      img: IMG.team.zahra,
-
-      objectPos: "50% 35%",
-    },
-    {
-      name: isAR ? "محمد رفيق محمد أحمد إبراهيم" : "Mohamed Rafik Mohamed Ahmed Ibrahim",
-      role: isAR ? "مستشار قانوني" : "Legal Counsel",
-      desc: isAR
-        ? `مستشار قانوني ثنائي اللغة (العربية والإنجليزية) يتمتع بخبرة تتجاوز ثماني سنوات في العمل القانوني داخل دولة الإمارات العربية المتحدة ومصر، لدى كبرى مكاتب المحاماة. يمتلك خبرة واسعة في التقاضي، صياغة العقود، الامتثال التنظيمي، إدارة المخاطر، وتسوية النزاعات، إضافة إلى معرفة متعمقة بأنظمة القضاء في الإمارات، بما في ذلك محاكم دبي وأبوظبي والمحاكم الاتحادية. يتميز محمد رفيق بمهارات عالية في صياغة اللوائح والمذكرات القانونية في مختلف الدعاوى المدنية والجزائية والتجارية والعمالية والأحوال الشخصية، مع سجل نجاح بلغ 90% في القضايا التي تولّى الترافع فيها. كما يمتلك خبرة متميزة في قوانين العقارات والامتثال لجهات مثل RERA وDLD، إلى جانب براعة في التفاوض وإعداد التسويات عالية المخاطر لصالح العملاء. قدم أكثر من 200 استشارة قانونية متخصصة عبر منصات احترافية، وشارك في إعداد ونشر مقالات قانونية مؤثرة ساهمت في رفع تصنيف المنصات القانونية على محركات البحث. يحمل درجة الماجستير في القانون العام والجنائي وعدة دبلومات وشهادات دولية في مجالات القانون والتكنولوجيا القانونية، مما يعزز قدرته على تقديم حلول قانونية مبتكرة وفعّالة. يؤمن بأن العمل القانوني يقوم على الدقة، النزاهة، وحماية مصالح العملاء وفق أعلى المعايير المهنية.`
-        : `Experienced and results-driven Legal Counsel with 8+ years of professional practice across the UAE and Egypt, specializing in corporate and commercial law, regulatory compliance, real estate (RERA/DLD), dispute resolution, and contract negotiation. Provides strategic legal guidance to support business growth, reduce risk, and ensure full compliance with local and international regulations. Has represented clients before major UAE judicial authorities, managed complex litigation portfolios, and successfully negotiated high-value settlements. Experience spans drafting and reviewing contracts, leading case strategies, advising on cross-border transactions, and supporting corporate governance frameworks. Beyond legal practice, authored high-impact legal content, delivered 200+ consultations, and achieved a 90% litigation success rate while leading high-performing teams. Holds an LL.M and LL.B from Alexandria University with certifications in commercial law, negotiation, legal tech, and digital transformation. Fluent in Arabic and English with a detail-oriented, analytical approach dedicated to clear, practical, business-aligned legal solutions.`,
-img: IMG.team.rafik,
-      objectPos: "50% 30%",
-    },
-  ];
+  const people = PEOPLE(isAR);
 
   return (
     <section className="py-16 bg-white" dir={isAR ? "rtl" : "ltr"}>
