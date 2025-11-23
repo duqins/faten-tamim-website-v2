@@ -1260,28 +1260,32 @@ const GalleryStrip = () => {
 =========================== */
 const PEOPLE_DB = [
   {
-    slug: "faten-tamim-alsulebi",
-    img: IMG.team.faten,
-    objectPos: "50% 22%",
-    nameEN: "Dr. Faten Tamim Alsulebi",
-    nameAR: "د. فاتن تميم الصليبي",
-    roleEN: "Attorney & Managing Partner",
-    roleAR: "محامية ومديرة المكتب",
-    shortEN:
-      "University educator in civil law and the first Emirati woman to earn a PhD in sports law. Blends rigorous scholarship with hands-on advisory on sponsorship, agency, and commercial agreements.",
-    shortAR:
-      "أستاذة جامعية في القانون المدني وأول إماراتية تنال دكتوراه في قانون الرياضة. تجمع بين البحث الدقيق والخبرة العملية في عقود الرعاية والوكالات والاتفاقات التجارية.",
-    longEN: `University educator in civil law at Abu Dhabi University and the first Emirati woman to earn a PhD in sports law within the civil-law discipline. Her doctoral research — “Regulating Contracts for Sports Sponsorship (A Comparative Study between UAE and Egyptian Law)” — anchors a practice that blends rigorous scholarship with hands-on advisory on drafting and reviewing sponsorship, agency, and commercial agreements.
+ slug: "faten-tamim-alsulebi",
+img: IMG.team.faten,
+objectPos: "50% 22%",
+nameEN: "Dr. Faten Tamim Alsulebi",
+nameAR: "د. فاتن تميم الصليبي",
+roleEN: "Managing Partner & Founder — Dr. Faten Tamim Advocates & Legal Consultants",
+roleAR: "المديرة العامة والمؤسسة – مكتب د. فاتن تميم للمحاماة والاستشارات القانونية",
+shortEN:
+"Distinguished attorney, legal scholar, and university lecturer at Abu Dhabi University with over 15 years of international and local experience. Specialized in civil, commercial, family, labour, corporate, and sports law.",
+shortAR:
+"محامية وأكاديمية وأستاذة جامعية في جامعة أبوظبي بخبرة تزيد عن 15 عاماً على الصعيدين المحلي والدولي، متخصصة في القانون المدني والتجاري والأحوال الشخصية والعمل والشركات وقانون الرياضة.",
+longEN: `Dr. Faten Tamim Alsulebi is a distinguished attorney, legal scholar, and university lecturer at Abu Dhabi University, with over 15 years of international and local experience in litigation, corporate advisory, and strategic legal consulting across the United Arab Emirates and abroad. As the founder and managing partner of the firm, she leads with integrity, precision, and a results-oriented mindset.
 
-She has undertaken advanced training in Switzerland related to the application of sports-law regulations to professional players and visited the International Court of Arbitration in Geneva through a program sponsored by the American University in Dubai. In practice, she served at Abu Dhabi Distribution Company (ADDC) within the investigations department, led inquiries into employee violations, founded a successful corporate volunteer program, and launched a monthly internal legal bulletin covering regulatory updates. She also handled customer-violation complaints, negotiated and reviewed water and electricity agreements, and advised on investor relations as legal counsel.
 
-Beyond academia and corporate advisory, she has delivered lectures on criminal and civil law at multiple venues and provided family-law support initiatives for staff well-being. Her portfolio includes commercial and sports-law contracting (including work with Al Ain Football Club), compliance and governance policies, and high-stakes negotiations — consistently prioritizing client protection, clear strategy, and confidentiality.`,
-    longAR: `أستاذة جامعية في جامعة أبوظبي في مجال القانون المدني، وأول امرأة إماراتية تنال درجة الدكتوراه في قانون الرياضة ضمن فروع القانون المدني. ترتكز خبرتها على «تنظيم عقود رعاية الرياضة» — دراسة مقارنة بين القانون الإماراتي والمصري — وتمزج بين البحث الأكاديمي والخبرة العملية في صياغة ومراجعة عقود الرعاية والوكالات والاتفاقات التجارية.
+Her expertise spans civil, commercial, family, labour, corporate, and sports law, as well as complex cross-border matters. Dr. Faten is known for combining academic depth with practical courtroom experience, ensuring every client receives legal representation that is both strategic and solution-driven.
 
-شاركت في برامج تدريب متقدمة في سويسرا متصلة بتطبيقات قانون الرياضة على اللاعبين، وزارت الهيئة الدولية للتحكيم (جنيف). عملت عمليًا لدى شركة أبوظبي للتوزيع ضمن إدارة التحقيقات، وأنشأت برنامجًا تطوعيًا ناجحًا، وأطلقت نشرة قانونية شهرية داخلية تغطي المستجدات التشريعية. كما تابعت شكاوى المخالفات وتفاوضت على اتفاقيات الماء والكهرباء وقدمت استشارات لعلاقات المستثمرين.
 
-قدمت محاضرات في القانون الجنائي والمدني، وأسهمت بمبادرات دعم أسري للموظفين. تشمل خبرتها التعاقدات التجارية والرياضية (ومنها أعمال مرتبطة بنادي العين)، وسياسات الامتثال والحوكمة، والتفاوض عالي المخاطر — مع أولوية دائمة لحماية العميل والسرية المهنية.`
-  },
+She continues to guide the firm with a vision centered on clarity, excellence, and client trust, positioning it among Abu Dhabi’s most respected boutique law practices.`,
+longAR: `تُعد الدكتورة فاتن تميم الصليبي محامية وأكاديمية وأستاذة جامعية في جامعة أبوظبي بخبرة تزيد عن 15 عاماً على الصعيدين المحلي والدولي في مجالات التقاضي والاستشارات القانونية الاستراتيجية داخل دولة الإمارات وخارجها. بصفتها المؤسسة والمديرة العامة للمكتب، تقود الفريق القانوني برؤية ترتكز على النزاهة والدقة وتحقيق النتائج.
+
+
+تغطي خبرتها مجالات القانون المدني، والتجاري، والأحوال الشخصية، والعمل، والشركات، وقانون الرياضة، إضافة إلى القضايا المعقدة ذات الطابع العابر للحدود. تُعرف د. فاتن بقدرتها على الدمج بين العمق الأكاديمي والخبرة العملية في ساحات القضاء، مما يضمن تقديم خدمات قانونية قائمة على التخطيط والفعالية.
+
+
+تواصل قيادة المكتب برؤية قائمة على الوضوح والتميّز والثقة، ما يجعل مكتبها من أبرز مكاتب المحاماة المتخصصة في أبوظبي.`
+},
   {
     slug: "mohamed-ahmed-eltobgy",
     img: IMG.team.mohamed,
