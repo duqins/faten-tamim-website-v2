@@ -67,7 +67,7 @@ const IMG = {
 team: {
   faten: "/faten-alsulebi.jpg",
   mohamed: "/mohamed-eltobgy.jpg",
-  zahra: "/zahra-sabrina-meddah.jpg",
+  zahra: "/zahra-sabrina-meddah.jpg.jpg",
   rafik: "/mohamed-rafik.jpg",
 },
 
