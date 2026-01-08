@@ -69,6 +69,7 @@ team: {
   mohamed: "/mohamed-eltobgy.jpg",
   zahra: "/zahra-sabrina-meddah.jpg",
   rafik: "/mohamed-rafik.jpg",
+  mohammedElGouhari: "/mohammed-el-gouhari.jpg",
 },
 
 
@@ -1335,6 +1336,23 @@ His work also covers contract drafting and review, legal opinions, negotiation o
     longEN: `Experienced and results-driven Legal Counsel with 8+ years of professional practice across the UAE and Egypt, specializing in corporate and commercial law, regulatory compliance, real estate (RERA/DLD), dispute resolution, and contract negotiation. Represented clients before major UAE judicial authorities, managed complex litigation portfolios, negotiated high-value settlements, and delivered 200+ consultations with a 90% litigation success rate. LL.M/LL.B (Alexandria University); certifications in commercial law, negotiation, legal tech, and digital transformation.`,
     longAR: `مستشار قانوني بخبرة تفوق 8 سنوات في الإمارات ومصر؛ متخصص في الشركات والتجاري والامتثال والعقارات (RERA/DLD) وتسوية النزاعات والتفاوض على العقود. مثّل عملاء أمام جهات قضائية رئيسية وأدار محافظ تقاضٍ معقدة، وتفاوض على تسويات عالية القيمة، وقدّم 200+ استشارة بنسبة نجاح 90% في التقاضي. حاصل على ماجستير وبكالوريوس قانون مع شهادات في التفاوض والتكنولوجيا القانونية والتحول الرقمي.`
   }
+];
+// ===== Mohammed El Gouhari (added) =====
+  {
+    slug: "mohammed-el-gouhari",
+    img: IMG.team.mohammedElGouhari,
+    objectPos: "50% 28%",
+    nameEN: "Mohammed El Gouhari",
+    nameAR: "محمد الجوهري",
+    roleEN: "Managing Director — Head of Administration & Corporate Practice",
+    roleAR: "المدير العام — رئيس إدارة الشؤون الإدارية وممارسة الشركات",
+    shortEN:
+      "Managing Director with ~25 years' experience in Abu Dhabi’s federal courts; leads corporate practice, litigation and high-value commercial transactions.",
+    shortAR:
+      "مدير عام بخبرة تقارب 25 عامًا في المحاكم الفدرالية بأبوظبي؛ يقود فرق الشركات والتقاضي والمعاملات التجارية المعقدة.",
+    longEN: `Mohammed El Gouhari is the firm's Managing Director and Head of Administration & Corporate Practice. With about 25 years' experience in the Abu Dhabi Federal Court (Judicial & Interpretation section and Civil & Commercial Execution Department), he leads civil & commercial litigation teams and complex business transactions. Mohammed combines deep legal and commercial understanding with management skills, advising regional and international clients on corporate restructurings, M&A, private equity deals, debt recovery and cross-border disputes. His practice also covers family, labour and Islamic/Sharia-related issues in banking and insurance contexts.`,
+    longAR: `محمد الجوهري هو المدير العام للمكتب ورئيس إدارة الشؤون الإدارية وممارسة الشركات. بخبرة تقارب 25 عامًا في محاكم أبوظبي الفدرالية (قسم القضاء والتفسير وإدارة التنفيذ المدني والتجاري)، يقود فرق التقاضي المدني والتجاري والصفقات التجارية المعقدة. يجمع محمد بين فهم قانوني وتجاري عميق وخبرة إدارية، مقدمًا استشارات لعملاء إقليميين ودوليين في إعادة هيكلة الشركات وعمليات الاندماج والاستحواذ وصفقات الأسهم الخاصة وتحصيل الديون وتسوية النزاعات العابرة للحدود. تشمل خبرته أيضاً قضايا الأحوال الشخصية والعمل ومبادئ الشريعة المطبقة في التمويل والتأمين الإسلامي.`,
+  },
 ];
 /* ===========================
    TEAM CARDS + GRIDS
