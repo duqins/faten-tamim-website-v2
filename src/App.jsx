@@ -1335,7 +1335,7 @@ His work also covers contract drafting and review, legal opinions, negotiation o
       "مستشار ثنائي اللغة بخبرة 8+ سنوات في الإمارات ومصر؛ شركات وتجاري وامتثال وعقارات (RERA/DLD) وتسوية نزاعات وتفاوض.",
     longEN: `Experienced and results-driven Legal Counsel with 8+ years of professional practice across the UAE and Egypt, specializing in corporate and commercial law, regulatory compliance, real estate (RERA/DLD), dispute resolution, and contract negotiation. Represented clients before major UAE judicial authorities, managed complex litigation portfolios, negotiated high-value settlements, and delivered 200+ consultations with a 90% litigation success rate. LL.M/LL.B (Alexandria University); certifications in commercial law, negotiation, legal tech, and digital transformation.`,
     longAR: `مستشار قانوني بخبرة تفوق 8 سنوات في الإمارات ومصر؛ متخصص في الشركات والتجاري والامتثال والعقارات (RERA/DLD) وتسوية النزاعات والتفاوض على العقود. مثّل عملاء أمام جهات قضائية رئيسية وأدار محافظ تقاضٍ معقدة، وتفاوض على تسويات عالية القيمة، وقدّم 200+ استشارة بنسبة نجاح 90% في التقاضي. حاصل على ماجستير وبكالوريوس قانون مع شهادات في التفاوض والتكنولوجيا القانونية والتحول الرقمي.`
-  }
+  },
 ];
 // ===== Mohammed El Gouhari (added) =====
   {
