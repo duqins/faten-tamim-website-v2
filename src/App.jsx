@@ -1337,20 +1337,25 @@ His work also covers contract drafting and review, legal opinions, negotiation o
   },
 
   {
-    slug: "mohammed-el-gouhari",
-    img: IMG.team.mohammedElGouhari,
-    objectPos: "50% 28%",
-    nameEN: "Mohammed El Gouhari",
-    nameAR: "محمد الجوهري",
-    roleEN: "Managing Director — Head of Administration & Corporate Practice",
-    roleAR: "المدير العام — رئيس إدارة الشؤون الإدارية وممارسة الشركات",
-    shortEN:
-      "Managing Director with ~25 years' experience in the Abu Dhabi Federal Court; leads corporate practice, litigation and high-value commercial transactions.",
-    shortAR:
-      "مدير عام بخبرة تقارب 25 عامًا في المحاكم الفدرالية بأبوظبي؛ يقود فرق الشركات والتقاضي والمعاملات التجارية المعقدة.",
-    longEN: `Mohammed El Gouhari is the firm's Managing Director and Head of Administration & Corporate Practice. With about 25 years' experience in the Abu Dhabi Federal Court (Judicial & Interpretation section and Civil & Commercial Execution Department), he leads civil & commercial litigation teams and complex business transactions. He advises regional and international clients on corporate restructurings, M&A, private equity, debt recovery and cross-border disputes.`,
-    longAR: `محمد الجوهري هو المدير العام للمكتب ورئيس إدارة الشؤون الإدارية وممارسة الشركات، بخبرة تقارب 25 عامًا في محاكم أبوظبي الفدرالية، ويقود فرق التقاضي المدني والتجاري والصفقات التجارية المعقدة، ويقدم استشارات استراتيجية للعملاء الإقليميين والدوليين.`,
-  },
+  slug: "mohammed-el-gouhari",
+  img: IMG.team.mohammedElGouhari,
+  objectPos: "50% 28%",
+  nameEN: "Mohammed El Gouhari",
+  nameAR: "محمد الجوهري",
+  roleEN: "Legal Consultant",
+  roleAR: "مستشار قانوني",
+  shortEN:
+    "Legal consultant with ~25 years' experience before Abu Dhabi Federal Courts, specializing in civil and commercial litigation and complex business disputes.",
+  shortAR:
+    "مستشار قانوني بخبرة تقارب 25 عامًا أمام المحاكم الفدرالية في أبوظبي، متخصص في التقاضي المدني والتجاري والنزاعات التجارية المعقدة.",
+  longEN: `Mohammed El Gouhari is a Legal Consultant with approximately 25 years of experience before the Abu Dhabi Federal Courts, including the Judicial & Interpretation Section and the Civil & Commercial Execution Department. His practice focuses on civil and commercial litigation, enforcement proceedings, and complex business disputes.
+
+He advises local, regional, and international clients on debt recovery, commercial contracts, dispute resolution strategies, and cross-border matters. Mohammed is known for his practical, results-oriented approach and his deep understanding of court procedures and execution mechanisms.`,
+  longAR: `محمد الجوهري هو مستشار قانوني يتمتع بخبرة تقارب 25 عامًا أمام محاكم أبوظبي الفدرالية، بما في ذلك قسم القضاء والتفسير وإدارة التنفيذ المدني والتجاري. يركز عمله على التقاضي المدني والتجاري وإجراءات التنفيذ والنزاعات التجارية المعقدة.
+
+يقدّم استشارات قانونية لعملاء محليين وإقليميين ودوليين في مجالات تحصيل الديون والعقود التجارية واستراتيجيات تسوية النزاعات والقضايا العابرة للحدود، ويتميّز بنهجه العملي القائم على تحقيق النتائج وفهمه العميق لإجراءات المحاكم والتنفيذ.`
+},
+
 ];
 
 /* ===========================
