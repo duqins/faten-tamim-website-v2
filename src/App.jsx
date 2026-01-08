@@ -1261,32 +1261,29 @@ const GalleryStrip = () => {
 =========================== */
 const PEOPLE_DB = [
   {
- slug: "faten-tamim-alsulebi",
-img: IMG.team.faten,
-objectPos: "50% 22%",
-nameEN: "Dr. Faten Tamim Alsulebi",
-nameAR: "د. فاتن تميم الصليبي",
-roleEN: "Managing Partner & Founder — Dr. Faten Tamim Advocates & Legal Consultants",
-roleAR: "المديرة العامة والمؤسسة – مكتب د. فاتن تميم للمحاماة والاستشارات القانونية",
-shortEN:
-"Distinguished attorney, legal scholar, and university lecturer at Abu Dhabi University with over 15 years of international and local experience. Specialized in civil, commercial, family, labour, corporate, and sports law.",
-shortAR:
-"محامية وأكاديمية وأستاذة جامعية في جامعة أبوظبي بخبرة تزيد عن 15 عاماً على الصعيدين المحلي والدولي، متخصصة في القانون المدني والتجاري والأحوال الشخصية والعمل والشركات وقانون الرياضة.",
-longEN: `Dr. Faten Tamim Alsulebi is a distinguished attorney, legal scholar, and university lecturer at Abu Dhabi University, with over 15 years of international and local experience in litigation, corporate advisory, and strategic legal consulting across the United Arab Emirates and abroad. As the founder and managing partner of the firm, she leads with integrity, precision, and a results-oriented mindset.
-
+    slug: "faten-tamim-alsulebi",
+    img: IMG.team.faten,
+    objectPos: "50% 22%",
+    nameEN: "Dr. Faten Tamim Alsulebi",
+    nameAR: "د. فاتن تميم الصليبي",
+    roleEN: "Managing Partner & Founder — Dr. Faten Tamim Advocates & Legal Consultants",
+    roleAR: "المديرة العامة والمؤسسة – مكتب د. فاتن تميم للمحاماة والاستشارات القانونية",
+    shortEN:
+      "Distinguished attorney, legal scholar, and university lecturer at Abu Dhabi University with over 15 years of international and local experience. Specialized in civil, commercial, family, labour, corporate, and sports law.",
+    shortAR:
+      "محامية وأكاديمية وأستاذة جامعية في جامعة أبوظبي بخبرة تزيد عن 15 عاماً على الصعيدين المحلي والدولي، متخصصة في القانون المدني والتجاري والأحوال الشخصية والعمل والشركات وقانون الرياضة.",
+    longEN: `Dr. Faten Tamim Alsulebi is a distinguished attorney, legal scholar, and university lecturer at Abu Dhabi University, with over 15 years of international and local experience in litigation, corporate advisory, and strategic legal consulting across the United Arab Emirates and abroad. As the founder and managing partner of the firm, she leads with integrity, precision, and a results-oriented mindset.
 
 Her expertise spans civil, commercial, family, labour, corporate, and sports law, as well as complex cross-border matters. Dr. Faten is known for combining academic depth with practical courtroom experience, ensuring every client receives legal representation that is both strategic and solution-driven.
 
-
 She continues to guide the firm with a vision centered on clarity, excellence, and client trust, positioning it among Abu Dhabi’s most respected boutique law practices.`,
-longAR: `تُعد الدكتورة فاتن تميم الصليبي محامية وأكاديمية وأستاذة جامعية في جامعة أبوظبي بخبرة تزيد عن 15 عاماً على الصعيدين المحلي والدولي في مجالات التقاضي والاستشارات القانونية الاستراتيجية داخل دولة الإمارات وخارجها. بصفتها المؤسسة والمديرة العامة للمكتب، تقود الفريق القانوني برؤية ترتكز على النزاهة والدقة وتحقيق النتائج.
-
+    longAR: `تُعد الدكتورة فاتن تميم الصليبي محامية وأكاديمية وأستاذة جامعية في جامعة أبوظبي بخبرة تزيد عن 15 عاماً على الصعيدين المحلي والدولي في مجالات التقاضي والاستشارات القانونية الاستراتيجية داخل دولة الإمارات وخارجها. بصفتها المؤسسة والمديرة العامة للمكتب، تقود الفريق القانوني برؤية ترتكز على النزاهة والدقة وتحقيق النتائج.
 
 تغطي خبرتها مجالات القانون المدني، والتجاري، والأحوال الشخصية، والعمل، والشركات، وقانون الرياضة، إضافة إلى القضايا المعقدة ذات الطابع العابر للحدود. تُعرف د. فاتن بقدرتها على الدمج بين العمق الأكاديمي والخبرة العملية في ساحات القضاء، مما يضمن تقديم خدمات قانونية قائمة على التخطيط والفعالية.
 
+تواصل قيادة المكتب برؤية قائمة على الوضوح والتميّز والثقة، ما يجعل مكتبها من أبرز مكاتب المحاماة المتخصصة في أبوظبي.`,
+  },
 
-تواصل قيادة المكتب برؤية قائمة على الوضوح والتميّز والثقة، ما يجعل مكتبها من أبرز مكاتب المحاماة المتخصصة في أبوظبي.`
-},
   {
     slug: "mohamed-ahmed-eltobgy",
     img: IMG.team.mohamed,
@@ -1304,8 +1301,9 @@ longAR: `تُعد الدكتورة فاتن تميم الصليبي محامية
 His work also covers contract drafting and review, legal opinions, negotiation of settlements, and corporate risk and compliance support. Bilingual (Arabic/English), he collaborates effectively with expert witnesses and advisory teams, maintaining strict confidentiality and delivering pragmatic, results-oriented solutions.`,
     longAR: `مستشار قانوني يركّز على التقاضي وصياغة المذكرات عبر القضايا المدنية والتجارية والجزائية والعمالية والأحوال الشخصية. يبني نظريات واقعية واضحة ويدير الدعوى من القيد حتى التنفيذ، بما يشمل الإثبات وندب الخبراء والمرافعة واستراتيجيات الطعن.
 
-يشمل عمله صياغة ومراجعة العقود، وإعداد الآراء القانونية، والتفاوض على التسويات، ودعم الامتثال وإدارة المخاطر داخل الشركات. ثنائي اللغة ويتعاون بكفاءة مع الخبراء والفرق الاستشارية مع التزام صارم بالسرية.`
+يشمل عمله صياغة ومراجعة العقود، وإعداد الآراء القانونية، والتفاوض على التسويات، ودعم الامتثال وإدارة المخاطر داخل الشركات. ثنائي اللغة ويتعاون بكفاءة مع الخبراء والفرق الاستشارية مع التزام صارم بالسرية.`,
   },
+
   {
     slug: "zahra-sabrina-meddah",
     img: IMG.team.zahra,
@@ -1319,8 +1317,9 @@ His work also covers contract drafting and review, legal opinions, negotiation o
     shortAR:
       "قاضية سابقة بخبرة 15+ سنة في التقاضي وتسوية النزاعات؛ سجل قوي بالقضايا التجارية والاستثمارية والشركات والعقار.",
     longEN: `Former judge and attorney with over 15 years of extensive experience in litigation and dispute resolution, with a strong focus on commercial and investment disputes, corporate law, real-estate conflicts, financial claims, as well as civil, labour, family, and criminal cases. Proven track record in managing complex legal matters, drafting contracts, legal submissions, and pleadings, and representing clients effectively before judicial authorities. Provides precise and strategic legal advice grounded in deep judicial experience and a comprehensive understanding of local and international laws, with a steadfast commitment to professionalism and confidentiality.`,
-    longAR: `قاضية سابقة ومحامية بخبرة تتجاوز 15 عامًا في التقاضي وتسوية النزاعات، مع تركيز على القضايا التجارية والاستثمارية وقانون الشركات والنزاعات العقارية والمطالبات المالية، إضافة إلى القضايا المدنية والعمالية والأحوال الشخصية والجزائية. تمتاز بإدارة الملفات المعقدة وصياغة العقود والمذكرات والتمثيل الفعّال أمام الجهات القضائية، مع استشارات دقيقة تستند لخبرة قضائية عميقة وفهم شامل للتشريعات المحلية والدولية.`
+    longAR: `قاضية سابقة ومحامية بخبرة تتجاوز 15 عامًا في التقاضي وتسوية النزاعات، مع تركيز على القضايا التجارية والاستثمارية وقانون الشركات والنزاعات العقارية والمطالبات المالية، إضافة إلى القضايا المدنية والعمالية والأحوال الشخصية والجزائية. تمتاز بإدارة الملفات المعقدة وصياغة العقود والمذكرات والتمثيل الفعّال أمام الجهات القضائية، مع استشارات دقيقة تستند لخبرة قضائية عميقة وفهم شامل للتشريعات المحلية والدولية.`,
   },
+
   {
     slug: "mohamed-rafik-ibrahim",
     img: IMG.team.rafik,
@@ -1333,11 +1332,10 @@ His work also covers contract drafting and review, legal opinions, negotiation o
       "Bilingual counsel (AR/EN) with 8+ years across UAE & Egypt; corporate/commercial, compliance, real estate (RERA/DLD), dispute resolution and negotiations.",
     shortAR:
       "مستشار ثنائي اللغة بخبرة 8+ سنوات في الإمارات ومصر؛ شركات وتجاري وامتثال وعقارات (RERA/DLD) وتسوية نزاعات وتفاوض.",
-    longEN: `Experienced and results-driven Legal Counsel with 8+ years of professional practice across the UAE and Egypt, specializing in corporate and commercial law, regulatory compliance, real estate (RERA/DLD), dispute resolution, and contract negotiation. Represented clients before major UAE judicial authorities, managed complex litigation portfolios, negotiated high-value settlements, and delivered 200+ consultations with a 90% litigation success rate. LL.M/LL.B (Alexandria University); certifications in commercial law, negotiation, legal tech, and digital transformation.`,
-    longAR: `مستشار قانوني بخبرة تفوق 8 سنوات في الإمارات ومصر؛ متخصص في الشركات والتجاري والامتثال والعقارات (RERA/DLD) وتسوية النزاعات والتفاوض على العقود. مثّل عملاء أمام جهات قضائية رئيسية وأدار محافظ تقاضٍ معقدة، وتفاوض على تسويات عالية القيمة، وقدّم 200+ استشارة بنسبة نجاح 90% في التقاضي. حاصل على ماجستير وبكالوريوس قانون مع شهادات في التفاوض والتكنولوجيا القانونية والتحول الرقمي.`
+    longEN: `Experienced and results-driven Legal Counsel with 8+ years of professional practice across the UAE and Egypt, specializing in corporate and commercial law, regulatory compliance, real estate (RERA/DLD), dispute resolution, and contract negotiation. Represented clients before major UAE judicial authorities, managed complex litigation portfolios, negotiated high-value settlements, and delivered 200+ consultations with a 90% litigation success rate.`,
+    longAR: `مستشار قانوني بخبرة تفوق 8 سنوات في الإمارات ومصر؛ متخصص في الشركات والتجاري والامتثال والعقارات (RERA/DLD) وتسوية النزاعات والتفاوض على العقود.`,
   },
-];
-// ===== Mohammed El Gouhari (added) =====
+
   {
     slug: "mohammed-el-gouhari",
     img: IMG.team.mohammedElGouhari,
@@ -1347,13 +1345,14 @@ His work also covers contract drafting and review, legal opinions, negotiation o
     roleEN: "Managing Director — Head of Administration & Corporate Practice",
     roleAR: "المدير العام — رئيس إدارة الشؤون الإدارية وممارسة الشركات",
     shortEN:
-      "Managing Director with ~25 years' experience in Abu Dhabi’s federal courts; leads corporate practice, litigation and high-value commercial transactions.",
+      "Managing Director with ~25 years' experience in the Abu Dhabi Federal Court; leads corporate practice, litigation and high-value commercial transactions.",
     shortAR:
       "مدير عام بخبرة تقارب 25 عامًا في المحاكم الفدرالية بأبوظبي؛ يقود فرق الشركات والتقاضي والمعاملات التجارية المعقدة.",
-    longEN: `Mohammed El Gouhari is the firm's Managing Director and Head of Administration & Corporate Practice. With about 25 years' experience in the Abu Dhabi Federal Court (Judicial & Interpretation section and Civil & Commercial Execution Department), he leads civil & commercial litigation teams and complex business transactions. Mohammed combines deep legal and commercial understanding with management skills, advising regional and international clients on corporate restructurings, M&A, private equity deals, debt recovery and cross-border disputes. His practice also covers family, labour and Islamic/Sharia-related issues in banking and insurance contexts.`,
-    longAR: `محمد الجوهري هو المدير العام للمكتب ورئيس إدارة الشؤون الإدارية وممارسة الشركات. بخبرة تقارب 25 عامًا في محاكم أبوظبي الفدرالية (قسم القضاء والتفسير وإدارة التنفيذ المدني والتجاري)، يقود فرق التقاضي المدني والتجاري والصفقات التجارية المعقدة. يجمع محمد بين فهم قانوني وتجاري عميق وخبرة إدارية، مقدمًا استشارات لعملاء إقليميين ودوليين في إعادة هيكلة الشركات وعمليات الاندماج والاستحواذ وصفقات الأسهم الخاصة وتحصيل الديون وتسوية النزاعات العابرة للحدود. تشمل خبرته أيضاً قضايا الأحوال الشخصية والعمل ومبادئ الشريعة المطبقة في التمويل والتأمين الإسلامي.`,
+    longEN: `Mohammed El Gouhari is the firm's Managing Director and Head of Administration & Corporate Practice. With about 25 years' experience in the Abu Dhabi Federal Court (Judicial & Interpretation section and Civil & Commercial Execution Department), he leads civil & commercial litigation teams and complex business transactions. He advises regional and international clients on corporate restructurings, M&A, private equity, debt recovery and cross-border disputes.`,
+    longAR: `محمد الجوهري هو المدير العام للمكتب ورئيس إدارة الشؤون الإدارية وممارسة الشركات، بخبرة تقارب 25 عامًا في محاكم أبوظبي الفدرالية، ويقود فرق التقاضي المدني والتجاري والصفقات التجارية المعقدة، ويقدم استشارات استراتيجية للعملاء الإقليميين والدوليين.`,
   },
 ];
+
 /* ===========================
    TEAM CARDS + GRIDS
 =========================== */
