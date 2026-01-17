@@ -2353,20 +2353,14 @@ const FamilyStatus = ({ lang }) => (
 function MapCard({ lang }) {
   const isAR = lang === "ar";
 
-  // ✅ Exact Google Business name (as you provided)
-  const businessNameEN = "Dr.Faten Tamim Advocates & Legal Consultants";
-  const businessNameAR = "د. فاتن تميم للمحاماة والاستشارات القانونية";
-
-  // ✅ Your shared Google Maps short link (opens the exact pin on mobile)
+  // ✅ Your exact pin link
   const placeLink = "https://maps.app.goo.gl/4ni9iADHJC4anDgN9?g_st=aw";
 
-  // ✅ Embed using the business name (reliable + shows correct place in most cases)
-  const q = encodeURIComponent(`${businessNameEN} Abu Dhabi`);
-  const mapEmbed = `https://www.google.com/maps?q=${q}&output=embed`;
+  // ✅ CID extracted from that pin (locks to the exact location)
+  const CID = "5386227777658469374";
 
-  // ✅ Desktop-friendly links
-  const mapsLink = `https://www.google.com/maps/search/?api=1&query=${q}`;
-  const dirLink = `https://www.google.com/maps/dir/?api=1&destination=${q}`;
+  // ✅ Exact embed for that pin
+  const mapEmbed = `https://www.google.com/maps?cid=${CID}&output=embed`;
 
   const [loaded, setLoaded] = React.useState(false);
 
@@ -2380,9 +2374,11 @@ function MapCard({ lang }) {
           </h3>
         </div>
 
-        {/* ✅ Show exact business name */}
-        <p className="mt-2 text-sm text-slate-700 font-medium">
-          {isAR ? businessNameAR : businessNameEN}
+        {/* Optional: show business name */}
+        <p className="mt-2 text-sm font-medium text-slate-700">
+          {isAR
+            ? "د. فاتن تميم للمحاماة والاستشارات القانونية"
+            : "Dr.Faten Tamim Advocates & Legal Consultants"}
         </p>
       </div>
 
@@ -2399,7 +2395,6 @@ function MapCard({ lang }) {
           onLoad={() => setLoaded(true)}
           allowFullScreen
         />
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-black/5 to-transparent" />
       </div>
 
       <div className="flex flex-col gap-2 p-4 sm:flex-row sm:items-center sm:justify-between">
@@ -2408,7 +2403,6 @@ function MapCard({ lang }) {
         </div>
 
         <div className="flex flex-wrap gap-2">
-          {/* ✅ Mobile pin link */}
           <a
             href={placeLink}
             target="_blank"
@@ -2419,20 +2413,8 @@ function MapCard({ lang }) {
             <ArrowRight className="h-4 w-4" />
           </a>
 
-          {/* ✅ Desktop search */}
           <a
-            href={mapsLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-700 hover:border-amber-300 hover:text-amber-700"
-          >
-            {isAR ? "فتح في خرائط جوجل" : "Open in Google Maps"}
-            <ArrowRight className="h-4 w-4" />
-          </a>
-
-          {/* ✅ Directions */}
-          <a
-            href={dirLink}
+            href={placeLink}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-2xl bg-amber-600 px-3 py-2 text-sm font-semibold text-white hover:bg-amber-700"
@@ -2445,7 +2427,6 @@ function MapCard({ lang }) {
     </div>
   );
 }
-
 
 
 
