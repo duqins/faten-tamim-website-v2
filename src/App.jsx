@@ -2351,17 +2351,22 @@ const FamilyStatus = ({ lang }) => (
   />
 );
 function MapCard({ lang }) {
-  const addrEN =
-    "Airport Road, Hamid Al Qubaisi Bldg, Mezzanine Floor, Office 3, Abu Dhabi, UAE";
-  const addrAR =
-    "شارع المطار، بناية حميد القبيسي، طابق الميزانين، مكتب (3)، أبوظبي، الإمارات العربية المتحدة";
   const isAR = lang === "ar";
 
-  // use address-based embed (works even before GBP verification)
-  const addressQuery = encodeURIComponent(addrEN);
-  const mapEmbed = `https://www.google.com/maps?q=${addressQuery}&output=embed`;
-  const mapsLink = `https://www.google.com/maps/search/?api=1&query=${addressQuery}`;
-  const dirLink = `https://www.google.com/maps/dir/?api=1&destination=${addressQuery}`;
+  // ✅ Exact Google Business name (as you provided)
+  const businessNameEN = "Dr.Faten Tamim Advocates & Legal Consultants";
+  const businessNameAR = "د. فاتن تميم للمحاماة والاستشارات القانونية";
+
+  // ✅ Your shared Google Maps short link (opens the exact pin on mobile)
+  const placeLink = "https://maps.app.goo.gl/4ni9iADHJC4anDgN9?g_st=aw";
+
+  // ✅ Embed using the business name (reliable + shows correct place in most cases)
+  const q = encodeURIComponent(`${businessNameEN} Abu Dhabi`);
+  const mapEmbed = `https://www.google.com/maps?q=${q}&output=embed`;
+
+  // ✅ Desktop-friendly links
+  const mapsLink = `https://www.google.com/maps/search/?api=1&query=${q}`;
+  const dirLink = `https://www.google.com/maps/dir/?api=1&destination=${q}`;
 
   const [loaded, setLoaded] = React.useState(false);
 
@@ -2374,8 +2379,10 @@ function MapCard({ lang }) {
             {isAR ? "الموقع على الخريطة" : "Location on the Map"}
           </h3>
         </div>
-        <p className="mt-2 text-sm text-slate-600">
-          {isAR ? addrAR : addrEN}
+
+        {/* ✅ Show exact business name */}
+        <p className="mt-2 text-sm text-slate-700 font-medium">
+          {isAR ? businessNameAR : businessNameEN}
         </p>
       </div>
 
@@ -2386,10 +2393,11 @@ function MapCard({ lang }) {
         <iframe
           title={isAR ? "خريطة المكتب" : "Office Map"}
           src={mapEmbed}
-          className="h-full w-full"
+          className="h-full w-full border-0"
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
           onLoad={() => setLoaded(true)}
+          allowFullScreen
         />
         <div className="pointer-events-none absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-black/5 to-transparent" />
       </div>
@@ -2398,7 +2406,20 @@ function MapCard({ lang }) {
         <div className="text-xs text-slate-500">
           {isAR ? "قد تختلف الإرشادات وفق حركة المرور." : "Directions may vary with traffic."}
         </div>
+
         <div className="flex flex-wrap gap-2">
+          {/* ✅ Mobile pin link */}
+          <a
+            href={placeLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-700 hover:border-amber-300 hover:text-amber-700"
+          >
+            {isAR ? "فتح الدبوس" : "Open Pin"}
+            <ArrowRight className="h-4 w-4" />
+          </a>
+
+          {/* ✅ Desktop search */}
           <a
             href={mapsLink}
             target="_blank"
@@ -2408,6 +2429,8 @@ function MapCard({ lang }) {
             {isAR ? "فتح في خرائط جوجل" : "Open in Google Maps"}
             <ArrowRight className="h-4 w-4" />
           </a>
+
+          {/* ✅ Directions */}
           <a
             href={dirLink}
             target="_blank"
@@ -2422,6 +2445,7 @@ function MapCard({ lang }) {
     </div>
   );
 }
+
 
 
 
