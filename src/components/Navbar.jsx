@@ -61,7 +61,7 @@ export default function Navbar() {
                 {isAr ? 'د. فاتن تميم' : 'Dr. Faten Tamim'}
               </div>
               <div className="font-outfit text-xs opacity-70 leading-tight">
-                {isAr ? 'للاستشارات والمرافعات' : 'Advocates & Legal Consultants'}
+                {isAr ? 'للمحاماه والاستشارات القانونية' : 'Advocates & Legal Consultants'}
               </div>
             </div>
           </Link>

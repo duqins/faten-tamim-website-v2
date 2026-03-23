@@ -22,7 +22,7 @@ export default function Footer() {
                   {isAr ? 'د. فاتن تميم' : 'Dr. Faten Tamim'}
                 </div>
                 <div className="font-outfit text-xs text-white/50 leading-snug">
-                  {isAr ? 'للاستشارات والمرافعات القانونية' : 'Advocates & Legal Consultants'}
+                  {isAr ? 'للمحاماه والاستشارات القانونية' : 'Advocates & Legal Consultants'}
                 </div>
               </div>
             </div>

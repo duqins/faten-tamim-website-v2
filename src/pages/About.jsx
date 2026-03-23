@@ -78,7 +78,7 @@ export default function About() {
                 <div className="space-y-5 font-outfit text-text-secondary text-[15px] leading-[1.9]">
                   <p>
                     {isAr
-                      ? 'د. فاتن تميم للاستشارات والمرافعات القانونية مكتب قانوني متخصص رائد في أبوظبي، الإمارات العربية المتحدة. تأسس على يد الدكتورة فاتن تميم الصليبي — محامية متميزة وأستاذة جامعية في جامعة أبوظبي — يجمع المكتب بين الخبرة القانونية العميقة والنهج المتمحور حول العميل.'
+                      ? 'مكتب الدكتوره فاتن تميم للمحاماه والاستشارات القانونية مكتب قانوني متخصص رائد في أبوظبي، الإمارات العربية المتحدة. تأسس على يد الدكتورة فاتن تميم الصليبي — محامية متميزة وأستاذة جامعية في جامعة أبوظبي — يجمع المكتب بين الخبرة القانونية العميقة والنهج المتمحور حول العميل.'
                       : 'Dr. Faten Tamim Advocates & Legal Consultants is a premier boutique law firm in Abu Dhabi, UAE. Founded by Dr. Faten Tamim Alsulebi — a distinguished advocate and lecturer at Abu Dhabi University — the firm combines deep legal expertise with a relentlessly client-centric approach.'}
                   </p>
                   <p>
