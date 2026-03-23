@@ -22,7 +22,6 @@ import Disclaimer from './pages/legal/Disclaimer'
 import Cookies from './pages/legal/Cookies'
 import News from './pages/News'
 import NewsArticle from './pages/NewsArticle'
-import StudioPage from './pages/Studio'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -57,7 +56,6 @@ export default function App() {
         <Route path="/cookies" element={<Cookies />} />
         <Route path="/news" element={<News />} />
         <Route path="/news/:slug" element={<NewsArticle />} />
-        <Route path="/studio/*" element={<StudioPage />} />
       </Routes>
       <Footer />
       <FloatingButtons />
