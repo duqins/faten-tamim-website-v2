@@ -747,23 +747,24 @@ function Contact() {
               </a>
             </ScrollReveal>
 
-            {/* Map */}
-            <ScrollReveal delay={300}>
-              <div className="rounded-2xl overflow-hidden" style={{ height: '200px' }}>
-                <iframe
-                  src="https://www.google.com/maps?cid=5386227777658469374&output=embed"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Office Location"
-                />
-              </div>
-            </ScrollReveal>
           </div>
         </div>
+
+        {/* Full-width map */}
+        <ScrollReveal delay={300}>
+          <div className="rounded-2xl overflow-hidden mt-10" style={{ height: '480px' }}>
+            <iframe
+              src="https://www.google.com/maps?cid=5386227777658469374&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Office Location"
+            />
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   )
