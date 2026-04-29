@@ -213,7 +213,7 @@ Embed: https://www.google.com/maps?cid=5386227777658469374&output=embed
 1. **Hero** — Full-viewport, dark navy, parallax, animated entrance, marquee
 2. **About** — Two-column: image left + text right, values cards, floating badge
 3. **Practice Areas** — 6 cards on cream background, icons, hover lift
-4. **Team** — Dark section, white cards, 5 members, experience badges
+4. **Team** — Dark section, white cards, 3 members, experience badges
 5. **Newsletter** — Warm gradient, email input, subscribe button
 6. **Contact** — Form + info cards + Google Maps
 
@@ -244,13 +244,11 @@ Embed: https://www.google.com/maps?cid=5386227777658469374&output=embed
 
 ---
 
-## Team Members (5)
+## Team Members (3)
 
 1. **Dr. Faten Tamim Alsulebi** — Managing Partner & Founder, 15+ years, Abu Dhabi University lecturer, civil/commercial/family/labour/corporate/sports law
 2. **Mohamed Ahmed Eltobgy** — Legal Consultant, litigation across civil/commercial/criminal/labour/personal-status, bilingual
-3. **Zahra Sabrina Meddah** — Attorney & Legal Counsel, former judge, 15+ years, commercial/investment/corporate/real-estate
-4. **Mohamed Rafik Ibrahim** — Legal Counsel, 8+ years UAE & Egypt, corporate/compliance/real estate/dispute resolution
-5. **Mohammed El Gouhari** — Legal Consultant, ~25 years Abu Dhabi Federal Courts, civil/commercial litigation
+3. **Mohamed Rafik Ibrahim** — Legal Counsel, 8+ years UAE & Egypt, corporate/compliance/real estate/dispute resolution
 
 ---
 

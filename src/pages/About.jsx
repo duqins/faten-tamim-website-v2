@@ -188,11 +188,11 @@ export default function About() {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
             {/* Left: photo strip */}
             <ScrollReveal className="flex -space-x-4 rtl:space-x-reverse">
-              {teamMembers.slice(0, 4).map((m, i) => (
+              {teamMembers.map((m, i) => (
                 <div
                   key={m.slug}
                   className="w-16 h-16 rounded-full overflow-hidden ring-2 ring-navy flex-shrink-0"
-                  style={{ zIndex: 4 - i }}
+                  style={{ zIndex: teamMembers.length - i }}
                 >
                   <img
                     src={m.photo}
@@ -201,12 +201,6 @@ export default function About() {
                   />
                 </div>
               ))}
-              <div
-                className="w-16 h-16 rounded-full ring-2 ring-navy flex items-center justify-center flex-shrink-0 font-outfit font-600 text-[13px] text-white"
-                style={{ background: 'var(--gold)', zIndex: 0 }}
-              >
-                +1
-              </div>
             </ScrollReveal>
             {/* Right: text + CTA */}
             <div className="flex-1 text-center lg:text-start">
@@ -215,12 +209,12 @@ export default function About() {
                   className="font-playfair font-700 text-white mb-3 leading-tight"
                   style={{ fontSize: 'clamp(1.6rem, 2.5vw, 2.2rem)' }}
                 >
-                  {isAr ? 'فريق من 5 محامين متميزين' : 'A Team of 5 Distinguished Attorneys'}
+                  {isAr ? 'فريق من 3 محامين متميزين' : 'A Team of 3 Distinguished Attorneys'}
                 </h2>
                 <p className="font-outfit text-white/50 text-[15px] leading-relaxed mb-6 max-w-xl">
                   {isAr
-                    ? 'خبرة مشتركة تتجاوز 75 عامًا في القانون الإماراتي والدولي'
-                    : 'Combined expertise spanning over 75 years in UAE and international law'}
+                    ? 'خبرة مشتركة تتجاوز 35 عامًا في القانون الإماراتي والدولي'
+                    : 'Combined expertise spanning over 35 years in UAE and international law'}
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={200}>

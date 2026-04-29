@@ -127,7 +127,7 @@ function Hero() {
             {[
               { val: '7+', label: isAr ? 'مجالات قانونية' : 'Practice Areas' },
               { val: '15+', label: isAr ? 'سنة خبرة' : 'Years Experience' },
-              { val: '5', label: isAr ? 'محامون' : 'Expert Lawyers' },
+              { val: '3', label: isAr ? 'محامون' : 'Expert Lawyers' },
               { val: '98%', label: isAr ? 'رضا العملاء' : 'Client Satisfaction' },
             ].map((s, i) => (
               <div key={i} className="text-center">
@@ -375,7 +375,7 @@ function Team() {
         </div>
 
         {/* Cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {teamMembers.map((member, i) => (
             <ScrollReveal key={member.slug} delay={i * 80}>
               <Link

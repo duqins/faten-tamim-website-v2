@@ -113,7 +113,7 @@ export default function Services() {
               {[
                 { val: '7', label: isAr ? 'مجالات ممارسة' : 'Practice Areas' },
                 { val: '98%', label: isAr ? 'رضا العملاء' : 'Client Satisfaction' },
-                { val: '5', label: isAr ? 'محامون متخصصون' : 'Expert Attorneys' },
+                { val: '3', label: isAr ? 'محامون متخصصون' : 'Expert Attorneys' },
                 { val: '15+', label: isAr ? 'سنة خبرة' : 'Years Experience' },
               ].map((s, i) => (
                 <ScrollReveal key={i} delay={i * 80}>

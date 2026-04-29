@@ -49,7 +49,7 @@ export const t = {
       stats: [
         { value: '500+', label: 'Cases Won' },
         { value: '15+', label: 'Years Experience' },
-        { value: '5', label: 'Expert Attorneys' },
+        { value: '3', label: 'Expert Attorneys' },
         { value: '98%', label: 'Client Satisfaction' },
       ],
     },
@@ -202,7 +202,7 @@ export const t = {
       stats: [
         { value: '+500', label: 'قضية مكسوبة' },
         { value: '+15', label: 'سنة خبرة' },
-        { value: '5', label: 'محامون متخصصون' },
+        { value: '3', label: 'محامون متخصصون' },
         { value: '98%', label: 'رضا العملاء' },
       ],
     },
